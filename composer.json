@@ -1,7 +1,7 @@
 {
-    "name": "sylius/sylius-standard",
+    "name": "sylius/sylius-sales-demo",
     "type": "project",
-    "description": "Starting point for projects powered by Sylius eCommerce.",
+    "description": "Sylius Sales Demo based on Sylius-Standard template",
     "keywords": [
         "symfony",
         "sylius",
@@ -26,7 +26,8 @@
     "require": {
         "php": "^8.0",
         "sylius/paypal-plugin": "^1.2.1",
-        "sylius/sylius": "^1.12@dev",
+        "sylius/plus": "^1.0.0-ALPHA.7",
+        "sylius/sylius": "dev-master as 1.11.5",
         "symfony/dotenv": "^5.4",
         "symfony/flex": "^2.1"
     },
@@ -58,16 +59,26 @@
         "symfony/web-profiler-bundle": "^5.4",
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://sylius.repo.packagist.com/sylius/"
+        }
+    ],
     "config": {
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/thanks": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true,
+            "symfony/flex": true,
+            "composer/package-versions-deprecated": true
+        }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "1.12-dev"
-        },
         "symfony": {
             "allow-contrib": false,
             "require": "^5.4"
