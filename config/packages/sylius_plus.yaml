@@ -1,0 +1,11 @@
+sylius_plus:
+    pdf_generator:
+        enabled: false
+
+sylius_invoicing:
+    pdf_generator:
+        enabled: false
+
+sylius_refund:
+    pdf_generator:
+        enabled: false

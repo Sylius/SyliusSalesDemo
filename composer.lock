@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a098329cd59a823397da2283e1b9a43",
+    "content-hash": "b3e2d2e500611b7dfbc354abececf811",
     "packages": [
         {
             "name": "alcohol/iso4217",
@@ -305,6 +305,63 @@
                 }
             ],
             "time": "2021-12-09T00:39:39+00:00"
+        },
+        {
+            "name": "beberlei/doctrineextensions",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/DoctrineExtensions.git",
+                "reference": "008f162f191584a6c37c03a803f718802ba9dd9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/DoctrineExtensions/zipball/008f162f191584a6c37c03a803f718802ba9dd9a",
+                "reference": "008f162f191584a6c37c03a803f718802ba9dd9a",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.7",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "nesbot/carbon": "*",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "symfony/yaml": "^4.2 || ^5.0",
+                "zf1/zend-date": "^1.12",
+                "zf1/zend-registry": "^1.12"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DoctrineExtensions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Steve Lacey",
+                    "email": "steve@steve.ly"
+                }
+            ],
+            "description": "A set of extensions to Doctrine 2 that add support for additional query functions available in MySQL, Oracle, PostgreSQL and SQLite.",
+            "keywords": [
+                "database",
+                "doctrine",
+                "orm"
+            ],
+            "support": {
+                "source": "https://github.com/beberlei/DoctrineExtensions/tree/v1.3.0"
+            },
+            "time": "2020-11-29T07:37:23+00:00"
         },
         {
             "name": "behat/transliterator",
@@ -3390,6 +3447,144 @@
             "time": "2021-10-24T07:53:34+00:00"
         },
         {
+            "name": "knplabs/knp-snappy",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/snappy.git",
+                "reference": "5126fb5b335ec929a226314d40cd8dad497c3d67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/snappy/zipball/5126fb5b335ec929a226314d40cd8dad497c3d67",
+                "reference": "5126fb5b335ec929a226314d40cd8dad497c3d67",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "psr/log": "^1.0||^2.0||^3.0",
+                "symfony/process": "~3.4||~4.3||~5.0||~6.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16||^3.0",
+                "pedrotroller/php-cs-custom-fixer": "^2.19",
+                "phpstan/phpstan": "^0.12.7",
+                "phpstan/phpstan-phpunit": "^0.12.6",
+                "phpunit/phpunit": "~7.4||~8.5"
+            },
+            "suggest": {
+                "h4cc/wkhtmltoimage-amd64": "Provides wkhtmltoimage-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltoimage-i386": "Provides wkhtmltoimage-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-amd64": "Provides wkhtmltopdf-amd64 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "h4cc/wkhtmltopdf-i386": "Provides wkhtmltopdf-i386 binary for Linux-compatible machines, use version `~0.12` as dependency",
+                "wemersonjanuario/wkhtmltopdf-windows": "Provides wkhtmltopdf executable for Windows, use version `~0.12` as dependency"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Snappy\\": "src/Knp/Snappy"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KNP Labs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/snappy/contributors"
+                }
+            ],
+            "description": "PHP library allowing thumbnail, snapshot or PDF generation from a url or a html page. Wrapper for wkhtmltopdf/wkhtmltoimage.",
+            "homepage": "http://github.com/KnpLabs/snappy",
+            "keywords": [
+                "knp",
+                "knplabs",
+                "pdf",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltopdf"
+            ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/snappy/issues",
+                "source": "https://github.com/KnpLabs/snappy/tree/v1.4.1"
+            },
+            "time": "2022-01-07T13:03:38+00:00"
+        },
+        {
+            "name": "knplabs/knp-snappy-bundle",
+            "version": "v1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpSnappyBundle.git",
+                "reference": "da11c2d083f5d8586c9bd59d2948ab7d39d57b34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpSnappyBundle/zipball/da11c2d083f5d8586c9bd59d2948ab7d39d57b34",
+                "reference": "da11c2d083f5d8586c9bd59d2948ab7d39d57b34",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-snappy": "^1.2",
+                "php": ">=7.4",
+                "symfony/framework-bundle": "^4.4|^5.1|^6.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.11",
+                "symfony/asset": "^4.4|^5.1|^6.0",
+                "symfony/finder": "^4.4|^5.1|^6.0",
+                "symfony/phpunit-bridge": "^4.4|^5.1|^6.0",
+                "symfony/security-csrf": "^4.4|^5.1|^6.0",
+                "symfony/templating": "^4.4|^5.1|^6.0",
+                "symfony/validator": "^4.4|^5.1|^6.0",
+                "symfony/yaml": "^4.4|^5.1|^6.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Bundle\\SnappyBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpSnappyBundle/contributors"
+                }
+            ],
+            "description": "Easily create PDF and images in Symfony by converting Twig/HTML templates.",
+            "homepage": "http://github.com/KnpLabs/KnpSnappyBundle",
+            "keywords": [
+                "bundle",
+                "knp",
+                "knplabs",
+                "pdf",
+                "snappy"
+            ],
+            "support": {
+                "issues": "https://github.com/KnpLabs/KnpSnappyBundle/issues",
+                "source": "https://github.com/KnpLabs/KnpSnappyBundle/tree/v1.9.0"
+            },
+            "time": "2022-01-05T15:50:51+00:00"
+        },
+        {
             "name": "laminas/laminas-code",
             "version": "4.5.1",
             "source": {
@@ -4353,6 +4548,66 @@
                 }
             ],
             "time": "2022-05-10T09:36:00+00:00"
+        },
+        {
+            "name": "myclabs/php-enum",
+            "version": "1.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/php-enum.git",
+                "reference": "b942d263c641ddb5190929ff840c68f78713e937"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/b942d263c641ddb5190929ff840c68f78713e937",
+                "reference": "b942d263c641ddb5190929ff840c68f78713e937",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "1.*",
+                "vimeo/psalm": "^4.6.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MyCLabs\\Enum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP Enum contributors",
+                    "homepage": "https://github.com/myclabs/php-enum/graphs/contributors"
+                }
+            ],
+            "description": "PHP Enum implementation",
+            "homepage": "http://github.com/myclabs/php-enum",
+            "keywords": [
+                "enum"
+            ],
+            "support": {
+                "issues": "https://github.com/myclabs/php-enum/issues",
+                "source": "https://github.com/myclabs/php-enum/tree/1.8.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/mnapoli",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/myclabs/php-enum",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-07-05T08:18:36+00:00"
         },
         {
             "name": "namshi/jose",
@@ -5763,6 +6018,57 @@
             "time": "2021-07-14T16:41:46+00:00"
         },
         {
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/simple-cache/tree/master"
+            },
+            "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -7146,6 +7452,98 @@
             "time": "2022-04-27T09:57:48+00:00"
         },
         {
+            "name": "sylius/invoicing-plugin",
+            "version": "v0.22.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sylius/InvoicingPlugin.git",
+                "reference": "ee876ec78ff6423277aaf18aa90c5ab45b5a1ac6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sylius/InvoicingPlugin/zipball/ee876ec78ff6423277aaf18aa90c5ab45b5a1ac6",
+                "reference": "ee876ec78ff6423277aaf18aa90c5ab45b5a1ac6",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-snappy-bundle": "^1.8",
+                "php": "^8.0",
+                "ramsey/uuid": "^3.9",
+                "sylius/grid-bundle": "^1.7",
+                "sylius/resource-bundle": "^1.6",
+                "sylius/sylius": "^1.10",
+                "symfony/config": "^4.4 || ^5.4",
+                "symfony/dependency-injection": "^4.4 || ^5.4",
+                "symfony/form": "^4.4 || ^5.4",
+                "symfony/framework-bundle": "^4.4 || ^5.4",
+                "symfony/http-foundation": "^4.4 || ^5.4",
+                "symfony/http-kernel": "^4.4 || ^5.4",
+                "symfony/messenger": "^4.4 || ^5.4",
+                "symfony/options-resolver": "^4.4 || ^5.4",
+                "symfony/routing": "^4.4 || ^5.4"
+            },
+            "require-dev": {
+                "behat/behat": "^3.6.1",
+                "behat/mink-selenium2-driver": "^1.4",
+                "friends-of-behat/exclude-specifications-extension": "^0.2 || ^0.3",
+                "friends-of-behat/mink": "^1.8",
+                "friends-of-behat/mink-browserkit-driver": "^1.3",
+                "friends-of-behat/mink-debug-extension": "^2.0",
+                "friends-of-behat/mink-extension": "^2.3",
+                "friends-of-behat/page-object-extension": "^0.3",
+                "friends-of-behat/suite-settings-extension": "^1.0",
+                "friends-of-behat/symfony-extension": "^2.1",
+                "friends-of-behat/variadic-extension": "^1.3",
+                "friendsofsymfony/oauth-server-bundle": ">2.0.0-alpha.0 ^2.0@dev",
+                "matthiasnoback/symfony-config-test": "^4.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+                "phpspec/phpspec": "^7.0",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "0.12.96",
+                "phpstan/phpstan-doctrine": "0.12.38",
+                "phpstan/phpstan-symfony": "0.12.32",
+                "phpstan/phpstan-webmozart-assert": "0.12.12",
+                "phpunit/phpunit": "^8.5",
+                "polishsymfonycommunity/symfony-mocker-container": "^1.0",
+                "sylius-labs/coding-standard": "~4.0.0",
+                "symfony/browser-kit": "^4.4 || ^5.4",
+                "symfony/debug-bundle": "^4.4 || ^5.4",
+                "symfony/dotenv": "^4.4 || ^5.4",
+                "symfony/intl": "^4.4 || ^5.4",
+                "symfony/web-profiler-bundle": "^4.4 || ^5.4",
+                "symfony/web-server-bundle": "^4.4 || ^5.4"
+            },
+            "type": "sylius-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sylius\\InvoicingPlugin\\": "src/",
+                    "Tests\\Sylius\\InvoicingPlugin\\Behat\\": "tests/Behat/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Invoicing plugin for Sylius.",
+            "keywords": [
+                "e-commerce",
+                "invoicing",
+                "sylius",
+                "sylius-plugin",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/Sylius/InvoicingPlugin/issues",
+                "source": "https://github.com/Sylius/InvoicingPlugin/tree/v0.22.0"
+            },
+            "time": "2022-04-27T09:38:34+00:00"
+        },
+        {
             "name": "sylius/mailer-bundle",
             "version": "v1.7.1",
             "source": {
@@ -7231,16 +7629,16 @@
         },
         {
             "name": "sylius/paypal-plugin",
-            "version": "v1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/PayPalPlugin.git",
-                "reference": "b32c831b6cb0dea933e87ec130b2006c63567e4b"
+                "reference": "b0068282d1c44bd2f3e74bf597519ad918600aa5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/PayPalPlugin/zipball/b32c831b6cb0dea933e87ec130b2006c63567e4b",
-                "reference": "b32c831b6cb0dea933e87ec130b2006c63567e4b",
+                "url": "https://api.github.com/repos/Sylius/PayPalPlugin/zipball/b0068282d1c44bd2f3e74bf597519ad918600aa5",
+                "reference": "b0068282d1c44bd2f3e74bf597519ad918600aa5",
                 "shasum": ""
             },
             "require": {
@@ -7249,7 +7647,7 @@
                 "phpseclib/phpseclib": "^2.0",
                 "polishsymfonycommunity/symfony-mocker-container": "^1.0",
                 "sylius-labs/doctrine-migrations-extra-bundle": "^0.1.3",
-                "sylius/sylius": "^1.10"
+                "sylius/sylius": "~1.10.0 || ~1.11.0"
             },
             "conflict": {
                 "doctrine/doctrine-bundle": "2.3.0",
@@ -7311,9 +7709,229 @@
             ],
             "support": {
                 "issues": "https://github.com/Sylius/PayPalPlugin/issues",
-                "source": "https://github.com/Sylius/PayPalPlugin/tree/v1.4.0"
+                "source": "https://github.com/Sylius/PayPalPlugin/tree/v1.4.1"
             },
-            "time": "2022-01-07T10:39:28+00:00"
+            "time": "2022-04-13T13:23:54+00:00"
+        },
+        {
+            "name": "sylius/plus",
+            "version": "v1.0.0-ALPHA.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://sylius.repo.packagist.com/sylius/dists/sylius/plus/1.0.0.0-alpha7/233b4677d91984861ca460826447e58c136546b5.zip",
+                "reference": "233b4677d91984861ca460826447e58c136546b5",
+                "mirrors": [
+                    {
+                        "url": "https://sylius.repo.packagist.com/sylius/dists/%package%/%version%/r%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "api-platform/core": "^2.5 || ^2.6",
+                "beberlei/doctrineextensions": "^1.2",
+                "doctrine/dbal": "^2.7",
+                "php": "^8.0",
+                "psr/simple-cache": "^1.0",
+                "sylius/invoicing-plugin": "~0.22",
+                "sylius/refund-plugin": "^1.2.0",
+                "sylius/sylius": "~1.10.11 || ~1.11.2"
+            },
+            "conflict": {
+                "doctrine/inflector": "^1.4",
+                "phpspec/prophecy": "1.11.0",
+                "symfony/doctrine-bridge": "4.4.16",
+                "symfony/form": "4.4.9"
+            },
+            "require-dev": {
+                "behat/behat": "^3.6.1",
+                "behat/mink-selenium2-driver": "^1.3",
+                "dmore/behat-chrome-extension": "^1.3",
+                "dmore/chrome-mink-driver": "^2.7",
+                "friends-of-behat/exclude-specifications-extension": "^0.2 || ^0.3",
+                "friends-of-behat/mink": "^1.8",
+                "friends-of-behat/mink-browserkit-driver": "^1.4",
+                "friends-of-behat/mink-debug-extension": "^2.0",
+                "friends-of-behat/mink-extension": "^2.4",
+                "friends-of-behat/page-object-extension": "^0.3",
+                "friends-of-behat/suite-settings-extension": "^1.0",
+                "friends-of-behat/symfony-extension": "^2.0",
+                "friends-of-behat/variadic-extension": "^1.1",
+                "hwi/oauth-bundle": "^1.3",
+                "lchrusciel/api-test-case": "^5.0",
+                "matthiasnoback/symfony-config-test": "^4.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+                "php-http/httplug-bundle": "^1.20",
+                "phparkitect/phparkitect": "^0.2.18",
+                "phpspec/phpspec": "^7.0",
+                "phpstan/phpstan": "0.12.98",
+                "phpstan/phpstan-doctrine": "0.12.38",
+                "phpstan/phpstan-phpunit": "0.12.19",
+                "phpstan/phpstan-symfony": "0.12.32",
+                "phpstan/phpstan-webmozart-assert": "0.12.12",
+                "phpunit/phpunit": "^8.5",
+                "polishsymfonycommunity/symfony-mocker-container": "^1.0",
+                "rector/rector": "^0.11.52",
+                "sylius-labs/coding-standard": "^4.0",
+                "symfony/browser-kit": "^4.4 || ^5.4",
+                "symfony/debug-bundle": "^4.4 || ^5.4",
+                "symfony/dotenv": "^4.4 || ^5.4",
+                "symfony/intl": "^4.4 || ^5.4",
+                "symfony/polyfill-php80": "^1.17",
+                "symfony/web-profiler-bundle": "^4.4 || ^5.4",
+                "symplify/easy-coding-standard": "10.2.1",
+                "vimeo/psalm": "3.14.2"
+            },
+            "type": "sylius-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sylius\\Plus\\": "src/",
+                    "Tests\\Sylius\\Plus\\Behat\\": "tests/Behat"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "spec\\Sylius\\Plus\\": "spec/",
+                    "Tests\\Sylius\\Plus\\Application\\": "tests/Application/src/",
+                    "Tests\\Sylius\\Plus\\Unit\\": "tests/Unit"
+                }
+            },
+            "notification-url": "https://sylius.repo.packagist.com/sylius/downloads/",
+            "scripts": {
+                "check": [
+                    "composer validate",
+                    "@analyse"
+                ],
+                "fix": [
+                    "vendor/bin/ecs check --ansi --no-progress-bar --fix"
+                ],
+                "analyse": [
+                    "vendor/bin/ecs check --ansi --no-progress-bar",
+                    "vendor/bin/psalm",
+                    "vendor/bin/phpstan analyse --ansi --no-progress -c phpstan.neon -l max src tests/Behat",
+                    "vendor/bin/deptrac --ansi"
+                ],
+                "link-templates": [
+                    "ln -s $(pwd)/src/Resources/templates/bundles/* $(pwd)/tests/Application/templates/bundles"
+                ],
+                "post-install-cmd": [
+                    "@link-templates"
+                ]
+            },
+            "license": [
+                "proprietary"
+            ],
+            "description": "A set of powerful extensions for enterprise customers.",
+            "keywords": [
+                "sylius",
+                "sylius-plugin"
+            ],
+            "support": {
+                "source": "https://github.com/Sylius/Plus/tree/v1.0.0-ALPHA.7",
+                "issues": "https://github.com/Sylius/Plus/issues"
+            },
+            "time": "2022-05-05T08:27:39+00:00"
+        },
+        {
+            "name": "sylius/refund-plugin",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Sylius/RefundPlugin.git",
+                "reference": "77a8ddb93984f02d956118e79b56bf509653c1e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Sylius/RefundPlugin/zipball/77a8ddb93984f02d956118e79b56bf509653c1e6",
+                "reference": "77a8ddb93984f02d956118e79b56bf509653c1e6",
+                "shasum": ""
+            },
+            "require": {
+                "knplabs/knp-snappy-bundle": "^1.7",
+                "myclabs/php-enum": "^1.7",
+                "php": "^8.0",
+                "sylius/resource-bundle": "^1.6",
+                "sylius/sylius": "~1.10.13 || ~1.11.4",
+                "symfony/messenger": "^4.4 || ^5.4"
+            },
+            "require-dev": {
+                "behat/behat": "^3.6",
+                "behat/mink-selenium2-driver": "^1.4",
+                "dmore/behat-chrome-extension": "^1.3",
+                "dmore/chrome-mink-driver": "^2.7",
+                "friends-of-behat/exclude-specifications-extension": "^0.2 || ^0.3",
+                "friends-of-behat/mink": "^1.8",
+                "friends-of-behat/mink-browserkit-driver": "^1.3",
+                "friends-of-behat/mink-debug-extension": "^2.0",
+                "friends-of-behat/mink-extension": "^2.3",
+                "friends-of-behat/page-object-extension": "^0.3",
+                "friends-of-behat/suite-settings-extension": "^1.0",
+                "friends-of-behat/symfony-extension": "^2.1",
+                "friends-of-behat/variadic-extension": "^1.3",
+                "friendsofsymfony/oauth-server-bundle": ">2.0.0-alpha.0 ^2.0@dev",
+                "matthiasnoback/symfony-config-test": "^4.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.1",
+                "phpspec/phpspec": "^7.0",
+                "phpstan/phpstan": "0.12.96",
+                "phpstan/phpstan-webmozart-assert": "0.12.12",
+                "phpunit/phpunit": "^9.5",
+                "polishsymfonycommunity/symfony-mocker-container": "^1.0",
+                "sylius-labs/coding-standard": "~4.0.0",
+                "symfony/browser-kit": "^4.4 || ^5.4",
+                "symfony/debug-bundle": "^4.4 || ^5.4",
+                "symfony/dotenv": "^4.4 || ^5.4",
+                "symfony/intl": "^4.4 || ^5.4",
+                "symfony/web-profiler-bundle": "^4.4 || ^5.4",
+                "symplify/easy-coding-standard": "9.3.26"
+            },
+            "type": "sylius-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sylius\\RefundPlugin\\": "src/",
+                    "Tests\\Sylius\\RefundPlugin\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mateusz Zalewski",
+                    "homepage": "http://mpzalewski.com.pl"
+                },
+                {
+                    "name": "Bartosz Pietrzak",
+                    "homepage": "https://github.com/bartoszpietrzak1994"
+                },
+                {
+                    "name": "Sylius Team",
+                    "email": "team@sylius.com"
+                }
+            ],
+            "description": "Plugin provides basic refunds functionality for Sylius application.",
+            "keywords": [
+                "e-commerce",
+                "refunds",
+                "sylius",
+                "sylius-plugin",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/Sylius/RefundPlugin/issues",
+                "source": "https://github.com/Sylius/RefundPlugin/tree/v1.2.0"
+            },
+            "time": "2022-04-27T10:16:57+00:00"
         },
         {
             "name": "sylius/registry",
@@ -18105,9 +18723,17 @@
             "time": "2021-07-28T10:34:58+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "sylius/sylius",
+            "version": "9999999-dev",
+            "alias": "1.11.5",
+            "alias_normalized": "1.11.5.0"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "sylius/plus": 15,
         "sylius/sylius": 20
     },
     "prefer-stable": true,
