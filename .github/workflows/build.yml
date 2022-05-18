@@ -99,7 +99,9 @@ jobs:
 
             -
                 name: Configure Plus Token
-                run: composer config --global --auth http-basic.sylius.repo.packagist.com token ${{ secrets.SYLIUS_PLUS_TOKEN }}
+                env:
+                    SYLIUS_PLUS_TOKEN: ${{ secrets.SYLIUS_PLUS_TOKEN }}
+                run: composer config --global --auth http-basic.sylius.repo.packagist.com token $SYLIUS_PLUS_TOKEN
 
             -
                 name: Install PHP dependencies
