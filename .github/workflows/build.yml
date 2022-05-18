@@ -98,6 +98,10 @@ jobs:
                         ${{ runner.os }}-php-${{ matrix.php }}-composer-
 
             -
+                name: Configure Plus Token
+                run: composer config --global --auth http-basic.sylius.repo.packagist.com token ${{ secrets.SYLIUS_PLUS_TOKEN }}
+
+            -
                 name: Install PHP dependencies
                 run: composer install --no-interaction
 
