@@ -14,6 +14,7 @@
 .editorconfig
 .php_cs.cache
 .travis.yml
+.idea
 composer.phar
 docker-compose*.yaml
 docker-compose*.yml
