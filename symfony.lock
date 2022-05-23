@@ -37,6 +37,9 @@
     "behat/transliterator": {
         "version": "v1.2.0"
     },
+    "bitbag/wishlist-plugin": {
+        "version": "v2.0.0"
+    },
     "clue/stream-filter": {
         "version": "v1.4.0"
     },

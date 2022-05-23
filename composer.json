@@ -25,6 +25,7 @@
     ],
     "require": {
         "php": "^8.0",
+        "bitbag/wishlist-plugin": "^2.0",
         "sylius/paypal-plugin": "^1.2.1",
         "sylius/plus": "^1.0.0-ALPHA.7",
         "sylius/sylius": "dev-master as 1.11.5",
@@ -83,7 +84,6 @@
             "allow-contrib": false,
             "require": "^5.4",
             "endpoint": [
-                "https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json",
                 "flex://defaults"
             ]
         }
