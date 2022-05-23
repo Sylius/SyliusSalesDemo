@@ -38,6 +38,7 @@ services:
       - "3306:3306"
 
   node:
+    container_name: node
     build:
       context: .
       target: sylius_node
