@@ -564,7 +564,24 @@
         "version": "v1.0.1"
     },
     "sylius/plus": {
-        "version": "v1.0.0-ALPHA.7"
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/Sylius/SyliusRecipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "6ba0c766b80b1c760648b13c17480d689be6d2eb"
+        },
+        "files": [
+            "config/packages/_sylius.yaml",
+            "config/routes/sylius_shop.yaml",
+            "config/routes/sylius_admin.yaml",
+            "src/Entity/User/AdminUser.php",
+            "src/Entity/Channel/Channel.php",
+            "src/Entity/Customer/Customer.php",
+            "src/Entity/Order/Order.php",
+            "src/Entity/Product/ProductVariant.php",
+            "src/Entity/Shipping/Shipment.php"
+        ]
     },
     "sylius/refund-plugin": {
         "version": "1.2",

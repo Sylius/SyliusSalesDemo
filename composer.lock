@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b5a0617e98848865744080bb4b81269e",
+    "content-hash": "63cabf2f1c1efe1cc8ee984bd875028f",
     "packages": [
         {
             "name": "alcohol/iso4217",
@@ -8116,12 +8116,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Sylius/Sylius.git",
-                "reference": "ffe8f6bc94bb13ac5e917b346c4233bbff301536"
+                "reference": "324b92a37dce996413c5e6bd8af62ad89c3af670"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/ffe8f6bc94bb13ac5e917b346c4233bbff301536",
-                "reference": "ffe8f6bc94bb13ac5e917b346c4233bbff301536",
+                "url": "https://api.github.com/repos/Sylius/Sylius/zipball/324b92a37dce996413c5e6bd8af62ad89c3af670",
+                "reference": "324b92a37dce996413c5e6bd8af62ad89c3af670",
                 "shasum": ""
             },
             "require": {
@@ -8392,7 +8392,7 @@
                 "issues": "https://github.com/Sylius/Sylius/issues",
                 "source": "https://github.com/Sylius/Sylius/tree/master"
             },
-            "time": "2022-05-18T04:59:37+00:00"
+            "time": "2022-05-19T13:00:33+00:00"
         },
         {
             "name": "sylius/theme-bundle",
@@ -18742,5 +18742,5 @@
         "php": "^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
