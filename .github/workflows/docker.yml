@@ -15,15 +15,16 @@ jobs:
         steps:
             -
                 name: Set Up QEMU
-                uses: docker/setup-qemu-action@v1
+                uses: docker/setup-qemu-action@v2
             -
                 name: Set Up Docker Buildx
-                uses: docker/setup-buildx-action@v1
+                uses: docker/setup-buildx-action@v2
             -
                 name: Build Image
-                uses: docker/build-push-action@v2
+                uses: docker/build-push-action@v3
                 with:
                     push: false
                     platforms: ${{ matrix.platform }}
                     cache-from: type=gha
                     cache-to: type=gha
+                    build-args: SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}

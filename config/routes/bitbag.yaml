@@ -1,2 +1,8 @@
 bitbag_sylius_wishlist_plugin:
     resource: "@BitBagSyliusWishlistPlugin/Resources/config/routing.yml"
+
+bitbag_sylius_mollie_plugin:
+    resource: "@BitBagSyliusMolliePlugin/Resources/config/routing.yaml"
+
+_bazinga_jstranslation:
+    resource: "@BazingaJsTranslationBundle/Resources/config/routing/routing.yml"

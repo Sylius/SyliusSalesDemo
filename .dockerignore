@@ -6,15 +6,16 @@
 **/.DS_Store
 **/.git/
 **/.gitattributes
+**/.github
 **/.gitignore
 **/.gitkeep
 **/.gitmodules
+**/.idea
 **/Dockerfile
 **/Thumbs.db
 .editorconfig
 .php_cs.cache
 .travis.yml
-.idea
 composer.phar
 docker-compose*.yaml
 docker-compose*.yml

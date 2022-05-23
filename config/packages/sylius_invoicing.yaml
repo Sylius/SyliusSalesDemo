@@ -1,2 +1,6 @@
+sylius_invoicing:
+    pdf_generator:
+        enabled: false
+
 imports:
     - { resource: "@SyliusInvoicingPlugin/Resources/config/config.yml" }
