@@ -20,6 +20,7 @@ class ProductVariant extends BaseProductVariant implements ProductVariantInterfa
     use InventorySourceStocksAwareTrait {
         __construct as private initializeProductVariantTrait;
     }
+    use RecurringProductVariantTrait;
 
     public function __construct()
     {

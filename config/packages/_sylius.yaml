@@ -9,10 +9,12 @@ imports:
 
     - { resource: "@SyliusPlusPlugin/Resources/config/config.yaml" }
         
+    - { resource: "@BitBagSyliusMolliePlugin/Resources/config/config.yaml" }
     - { resource: "@BitBagSyliusWishlistPlugin/Resources/config/config.yml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
+    images_dir: "%kernel.project_dir%/public/media/image/"
 
 sylius_addressing:
     resources:
