@@ -2,5 +2,10 @@ sylius_refund:
     pdf_generator:
         enabled: false
 
+parameters:
+    sylius_refund.supported_gateways:
+        - offline
+        - adyen
+
 imports:
     - { resource: "@SyliusRefundPlugin/Resources/config/app/config.yml" }

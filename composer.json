@@ -26,6 +26,7 @@
     "require": {
         "php": "^8.0",
         "bitbag/mollie-plugin": "^4.0",
+        "bitbag/sylius-adyen-plugin": "^1.1",
         "bitbag/wishlist-plugin": "^2.0",
         "sylius/paypal-plugin": "^1.2.1",
         "sylius/plus": "^1.0.0-ALPHA.7",

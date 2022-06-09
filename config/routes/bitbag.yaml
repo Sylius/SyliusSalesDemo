@@ -6,3 +6,6 @@ bitbag_sylius_mollie_plugin:
 
 _bazinga_jstranslation:
     resource: "@BazingaJsTranslationBundle/Resources/config/routing/routing.yml"
+
+bitbag_sylius_adyen_plugin:
+    resource: "@BitBagSyliusAdyenPlugin/Resources/config/routing.yaml"

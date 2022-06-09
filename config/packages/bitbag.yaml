@@ -4,3 +4,7 @@ winzou_state_machine:
             complete:
                 from: [cart, addressed, shipping_selected, shipping_skipped, payment_selected, payment_skipped]
                 to: completed
+
+bitbag_sylius_adyen:
+    logger: true
+    supported_types: ~
