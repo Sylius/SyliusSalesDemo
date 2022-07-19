@@ -157,7 +157,8 @@ jobs:
             -   
                 name: Validate composer.json
                 run: composer validate --ansi --strict --no-check-publish
-                
+                continue-on-error: true
+            
             -   
                 name: Run security check
                 run: symfony security:check
