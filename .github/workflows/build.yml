@@ -165,7 +165,6 @@ jobs:
 
             -
                 name: Check coding standard
-                if: matrix.php != '7.4'
                 run: vendor/bin/ecs check src
 
             -   
@@ -186,11 +185,11 @@ jobs:
 
             -
                 name: Run managing catalog promotion scenarios
-                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript&&~@todo&&~@cli&&@managing_catalog_promotions"
+                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript&&~@todo&&~@cli&&@managing_catalog_promotions" || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript&&~@todo&&~@cli&&@managing_catalog_promotions" --rerun
 
             -   
                 name: Run non-JS Behat (without managing catalog promotion scenarios)
-                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript&&~@todo&&~@cli&&@~managing_catalog_promotions"
+                run: vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript&&~@todo&&~@cli&&@~managing_catalog_promotions" || vendor/bin/behat --colors --strict --no-interaction -vvv -f progress --tags="~@javascript&&~@todo&&~@cli&&@~managing_catalog_promotions" --rerun
             
             -
                 name: Run JS Behat
