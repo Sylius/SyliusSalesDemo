@@ -1,4 +1,7 @@
 {
+    "adyen/php-api-library": {
+        "version": "11.0.0"
+    },
     "aeon-php/calendar": {
         "version": "0.16.4"
     },
@@ -40,6 +43,9 @@
     "bitbag/mollie-plugin": {
         "version": "v4.0.1"
     },
+    "bitbag/sylius-adyen-plugin": {
+        "version": "v1.1.0"
+    },
     "bitbag/wishlist-plugin": {
         "version": "v2.0.0"
     },
@@ -54,6 +60,9 @@
     },
     "composer/ca-bundle": {
         "version": "1.3.2"
+    },
+    "composer/package-versions-deprecated": {
+        "version": "1.11.99.5"
     },
     "dealerdirect/phpcodesniffer-composer-installer": {
         "version": "v0.7.1"
@@ -331,6 +340,18 @@
             "ref": "5ef2976310e8f9621c1a722a73bfbe115c1559a3"
         }
     },
+    "nyholm/psr7": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "0cd4d2d0e7f646fda75f9944f747a56e6ed13d4c"
+        },
+        "files": [
+            "config/packages/nyholm_psr7.yaml"
+        ]
+    },
     "openlss/lib-array2xml": {
         "version": "0.0.10"
     },
@@ -444,6 +465,9 @@
     },
     "psr/http-client": {
         "version": "1.0.0"
+    },
+    "psr/http-factory": {
+        "version": "1.0.1"
     },
     "psr/http-message": {
         "version": "1.0.1"

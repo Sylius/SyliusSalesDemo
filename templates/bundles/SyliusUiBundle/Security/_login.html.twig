@@ -14,7 +14,7 @@
             {% include '@SyliusPlusPlugin/Admin/Layout/_logo.html.twig' %}
         {% endif %}
 
-        {% if last_error %}
+        {% if (last_error is defined) and (last_error is not null) %}
             <div class="ui left aligned basic segment">
                 {{ messages.error(last_error.messageKey) }}
             </div>
