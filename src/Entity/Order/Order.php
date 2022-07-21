@@ -38,9 +38,10 @@ class Order extends BaseOrder implements OrderInterface, ReturnsOrderInterface, 
             ->filter(function (OrderItemInterface $orderItem) { // @phpstan-ignore-line
                 $variant = $orderItem->getVariant();
 
-                return $variant instanceof ProductVariantInterface
-                    && true === $variant->isRecurring();
-            });
+                return $variant instanceof ProductVariantInterface &&
+                    true === $variant->isRecurring();
+            })
+        ;
     }
 
     public function getNonRecurringItems(): Collection
@@ -49,9 +50,10 @@ class Order extends BaseOrder implements OrderInterface, ReturnsOrderInterface, 
             ->filter(function (OrderItemInterface $orderItem) { //@phpstan-ignore-line
                 $variant = $orderItem->getVariant();
 
-                return $variant instanceof ProductVariantInterface
-                    && false === $variant->isRecurring();
-            });
+                return $variant instanceof ProductVariantInterface &&
+                    false === $variant->isRecurring();
+            })
+        ;
     }
 
     public function hasRecurringContents(): bool
