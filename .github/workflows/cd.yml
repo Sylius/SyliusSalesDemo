@@ -21,7 +21,7 @@ jobs:
             -
                 name: Create VPS
                 run: |
-                     doctl compute droplet create ${{ env.SERVER_NAME }}-${{ github.GITHUB_SHA }} \
+                     doctl compute droplet create ${{ env.SERVER_NAME }}-${{ secrets.GITHUB_SHA }} \
                          --ssh-keys ${{ secrets.DIGITALOCEAN_ADMIN_SSH_KEY }} \
                          --size s-1vcpu-512mb-10gb \
                          --image ubuntu-22-04-x64 \
