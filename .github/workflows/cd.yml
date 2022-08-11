@@ -2,7 +2,6 @@ name: Deploy Sylius Sales Demo
 
 on:
     push:
-    pull_request:
 
 jobs:
     deploy:
@@ -27,6 +26,5 @@ jobs:
                          --image ubuntu-22-04-x64 \
                          --region ams3 \
                          --tag-name sales-demo \
-                         --user-data "export SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }};export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }};curl -fsSL https://get.docker.com -o get-docker.sh; sudo sh get-docker.sh; git clone https://github.com/Sylius/SyliusSalesDemo.git; cd SyliusSalesDemo || exit; docker compose up -d" \
+                         --user-data "#!/bin/bash export SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }};export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }};curl -fsSL https://get.docker.com -o get-docker.sh; sudo sh get-docker.sh; git clone https://github.com/Sylius/SyliusSalesDemo.git; cd SyliusSalesDemo || exit; docker compose up -d" \
                          --wait
-#                        --user-data-file .digitalocean/deploy.sh \
