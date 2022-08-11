@@ -1,0 +1,32 @@
+name: Deploy Sylius Sales Demo
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        env:
+            SERVER_NAME: sylius-sales-demo
+        steps:
+            -
+                name: Checkout Code
+                uses: actions/checkout@v3
+            -
+                name: Install Digital Ocean CLI
+                uses: digitalocean/action-doctl@v2
+                with:
+                    token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+            -
+                name: Create VPS
+                run: |
+                     doctl compute droplet create ${{ env.SERVER_NAME }}-${{ env.GITHUB_SHA }} \
+                         --ssh-keys ${{ secrets.DIGITALOCEAN_ADMIN_SSH_KEY }} \
+                         --size s-1vcpu-512mb-10gb \
+                         --image ubuntu-22-04-x64 \
+                         --region ams3 \
+                         --tag-name sales-demo \
+                         --user-data "export SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }};export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }};curl -fsSL https://get.docker.com -o get-docker.sh; sudo sh get-docker.sh; git clone https://github.com/Sylius/SyliusSalesDemo.git; cd SyliusSalesDemo || exit; docker compose up -d" \
+                         --wait
+#                        --user-data-file .digitalocean/deploy.sh \
