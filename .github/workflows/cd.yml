@@ -18,13 +18,25 @@ jobs:
                 with:
                     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
             -
+                name: Prepare Deployment Script
+                run: |
+                    touch deploy.sh
+                    echo "#!/bin/bash" >> deploy.sh
+                    echo "export SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}" >> deploy.sh
+                    echo "export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> deploy.sh
+                    echo "curl -fsSL https://get.docker.com -o get-docker.sh" >> deploy.sh
+                    echo "sudo sh get-docker.sh" >> deploy.sh
+                    echo "git clone https://github.com/Sylius/SyliusSalesDemo.git" >> deploy.sh
+                    echo "cd SyliusSalesDemo || exit" >> deploy.sh
+                    echo "docker compose up -d" >> deploy.sh
+            -
                 name: Create VPS
                 run: |
-                     doctl compute droplet create ${{ env.SERVER_NAME }}-$GITHUB_SHA \
-                         --ssh-keys ${{ secrets.DIGITALOCEAN_ADMIN_SSH_KEY }} \
-                         --size s-1vcpu-512mb-10gb \
-                         --image ubuntu-22-04-x64 \
-                         --region ams3 \
-                         --tag-name sales-demo \
-                         --user-data "#!/bin/bash export SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }};export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }};curl -fsSL https://get.docker.com -o get-docker.sh; sudo sh get-docker.sh; git clone https://github.com/Sylius/SyliusSalesDemo.git; cd SyliusSalesDemo || exit; docker compose up -d" \
-                         --wait
+                    doctl compute droplet create ${{ env.SERVER_NAME }}-$GITHUB_SHA \
+                        --ssh-keys ${{ secrets.DIGITALOCEAN_ADMIN_SSH_KEY }} \
+                        --size s-1vcpu-512mb-10gb \
+                        --image ubuntu-22-04-x64 \
+                        --region ams3 \
+                        --tag-name sales-demo \
+                        --user-data-file deploy.sh \
+                        --wait
