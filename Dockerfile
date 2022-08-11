@@ -44,7 +44,6 @@ ARG APP_ENV=prod
 # prevent the reinstallation of vendors at every changes in the source code
 COPY composer.* symfony.lock ./
 RUN set -eux; \
-    composer config --global --auth http-basic.sylius.repo.packagist.com token ${SYLIUS_PLUS_TOKEN}; \
     composer install --prefer-dist --no-autoloader --no-interaction --no-scripts --no-progress; \
     composer clear-cache
 

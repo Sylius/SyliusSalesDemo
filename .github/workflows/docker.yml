@@ -27,4 +27,4 @@ jobs:
                     platforms: ${{ matrix.platform }}
                     cache-from: type=gha
                     cache-to: type=gha
-                    build-args: SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}
+                    build-args: COMPOSER_AUTH="{\"http-basic\":{\"http-basic.sylius.repo.packagist.com\":{\"username\":\"token\",\"password\":\"${{ secrets.SYLIUS_PLUS_TOKEN }}\"}}}"

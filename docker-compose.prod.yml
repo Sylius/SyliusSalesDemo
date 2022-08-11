@@ -13,6 +13,7 @@ services:
       APP_ENV: prod
       APP_DEBUG: 0
       APP_SECRET: EDITME
+      COMPOSER_AUTH: "{\"http-basic\":{\"http-basic.sylius.repo.packagist.com\":{\"username\":\"token\",\"password\":\"${SYLIUS_PLUS_TOKEN}\"}}}"
     volumes:
       # use a bind-mounted host directory, as we want to keep the sessions
       - ./var/sessions:/srv/sylius/var/sessions:rw
