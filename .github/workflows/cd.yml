@@ -2,6 +2,8 @@ name: Deploy Sylius Sales Demo
 
 on:
     push:
+        branches:
+            - master
 
 jobs:
     deploy:
@@ -31,13 +33,19 @@ jobs:
                     echo "docker compose build --build-arg SYLIUS_PLUS_TOKEN=$SYLIUS_PLUS_TOKEN" >> deploy.sh
                     echo "docker compose up -d" >> deploy.sh
             -
-                name: Create VPS
+                name: Create Droplet
                 run: |
                     doctl compute droplet create ${{ env.SERVER_NAME }}-$GITHUB_SHA \
                         --ssh-keys ${{ secrets.DIGITALOCEAN_ADMIN_SSH_KEY }} \
                         --size s-1vcpu-2gb-intel \
                         --image ubuntu-22-04-x64 \
                         --region ams3 \
-                        --tag-name sales-demo \
+                        --tag-name sylius-sales-demo \
                         --user-data-file deploy.sh \
+                        --format ID \
                         --wait
+            -
+                name: Remove Old Droplets
+                run: |
+                    chmod +x .digitalocean/remove-old-droplets.sh
+                    ./.digitalocean/remove-old-droplets.sh
