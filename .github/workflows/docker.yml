@@ -50,6 +50,10 @@ jobs:
                 uses: actions/checkout@v3
                 if: matrix.platform == 'linux/amd64'
             -
+                name: Build Sylius Store
+                run: docker compose -f ${{ matrix.docker_compose }} build --build-arg SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }} 
+                if: matrix.platform == 'linux/amd64'
+            -
                 name: Setup Sylius Store
                 run: docker compose -f ${{ matrix.docker_compose }} up -d
                 if: matrix.platform == 'linux/amd64'
