@@ -43,6 +43,23 @@ jobs:
                         --format ID \
                         --wait
             -
+                name: Change Domain
+                run: |
+                    doctl compute domain records create sylius.com \
+                        --record-type=A \
+                        --record-data=127.0.0.1 
+                        --record-name=sales
+                    doctl compute domain records create sylius.com \
+                        --record-type=A \
+                        --record-data=127.0.0.1 
+                        --record-name=sales
+                    
+                    # get list of sales.sylius.com records
+                    compute domain records list sylius.com | grep "sales"
+                    # get ids
+                    # update all with new ip address
+
+            -
                 name: Remove Old Droplets
                 run: |
                     chmod +x .digitalocean/remove-old-droplets.sh
