@@ -1,0 +1,51 @@
+name: Deploy Sylius Sales Demo
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        env:
+            SERVER_NAME: sylius-sales-demo
+        steps:
+            -
+                name: Checkout Code
+                uses: actions/checkout@v3
+            -
+                name: Install Digital Ocean CLI
+                uses: digitalocean/action-doctl@v2
+                with:
+                    token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+            -
+                name: Prepare Deployment Script
+                run: |
+                    touch deploy.sh
+                    echo "#!/bin/bash" >> deploy.sh
+                    echo "export SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}" >> deploy.sh
+                    echo "export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> deploy.sh
+                    echo "curl -fsSL https://get.docker.com -o get-docker.sh" >> deploy.sh
+                    echo "sudo sh get-docker.sh" >> deploy.sh
+                    echo "git clone https://github.com/Sylius/SyliusSalesDemo.git" >> deploy.sh
+                    echo "cd SyliusSalesDemo || exit" >> deploy.sh
+                    echo "docker compose build --build-arg SYLIUS_PLUS_TOKEN=$SYLIUS_PLUS_TOKEN" >> deploy.sh
+                    echo "docker compose up -d" >> deploy.sh
+            -
+                name: Create Droplet
+                run: |
+                    doctl compute droplet create ${{ env.SERVER_NAME }}-$GITHUB_SHA \
+                        --ssh-keys ${{ secrets.DIGITALOCEAN_ADMIN_SSH_KEY }} \
+                        --size s-1vcpu-2gb-intel \
+                        --image ubuntu-22-04-x64 \
+                        --region ams3 \
+                        --tag-name sylius-sales-demo \
+                        --user-data-file deploy.sh \
+                        --format ID \
+                        --wait
+            -
+                name: Remove Old Droplets
+                run: |
+                    chmod +x .digitalocean/remove-old-droplets.sh
+                    ./.digitalocean/remove-old-droplets.sh
