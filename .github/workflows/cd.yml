@@ -28,8 +28,8 @@ jobs:
                     echo "sudo sh get-docker.sh" >> deploy.sh
                     echo "git clone https://github.com/Sylius/SyliusSalesDemo.git" >> deploy.sh
                     echo "cd SyliusSalesDemo || exit" >> deploy.sh
-                    echo "docker compose -f docker-compose.prod.yaml build --build-arg SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}" >> deploy.sh
-                    echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} docker compose -f docker-compose.prod.yaml up -d" >> deploy.sh
+                    echo "docker compose -f docker-compose.prod.yml build --build-arg SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}" >> deploy.sh
+                    echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} docker compose -f docker-compose.prod.yml up -d" >> deploy.sh
             -
                 name: Create Droplet
                 run: |
