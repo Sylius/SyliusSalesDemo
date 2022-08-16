@@ -24,14 +24,12 @@ jobs:
                 run: |
                     touch deploy.sh
                     echo "#!/bin/bash" >> deploy.sh
-                    echo "export SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}" >> deploy.sh
-                    echo "export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> deploy.sh
                     echo "curl -fsSL https://get.docker.com -o get-docker.sh" >> deploy.sh
                     echo "sudo sh get-docker.sh" >> deploy.sh
                     echo "git clone https://github.com/Sylius/SyliusSalesDemo.git" >> deploy.sh
                     echo "cd SyliusSalesDemo || exit" >> deploy.sh
-                    echo "docker compose build --build-arg SYLIUS_PLUS_TOKEN=$SYLIUS_PLUS_TOKEN" >> deploy.sh
-                    echo "docker compose up -d" >> deploy.sh
+                    echo "docker compose build --build-arg SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}" >> deploy.sh
+                    echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} docker compose up -d" >> deploy.sh
             -
                 name: Create Droplet
                 run: |
