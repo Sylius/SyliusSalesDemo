@@ -39,6 +39,7 @@ jobs:
                     platforms: ${{ matrix.platform }}
                     cache-from: type=gha
                     cache-to: type=gha
+                    build-args: SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}
                     load: true
             -
                 name: Shutdown Default MySQL
