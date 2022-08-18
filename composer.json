@@ -12,22 +12,11 @@
     ],
     "homepage": "https://sylius.com",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Paweł Jędrzejewski"
-        },
-        {
-            "name": "Sylius project"
-        },
-        {
-            "name": "Community contributions"
-        }
-    ],
     "require": {
         "php": "^8.0",
         "bitbag/mollie-plugin": "^4.0",
         "bitbag/sylius-adyen-plugin": "^1.1",
-        "bitbag/wishlist-plugin": "^2.0",
+        "bitbag/wishlist-plugin": "dev-fixed-channel",
         "sylius/paypal-plugin": "^1.2.1",
         "sylius/plus": "^1.0.0-ALPHA.7",
         "sylius/sylius": "1.12.x-dev as 1.11.6",
@@ -66,6 +55,10 @@
         {
             "type": "composer",
             "url": "https://sylius.repo.packagist.com/sylius/"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Ferror/SyliusWishlistPlugin.git"
         }
     ],
     "config": {
