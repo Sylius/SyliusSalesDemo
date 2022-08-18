@@ -22,7 +22,6 @@ if [ "$1" = 'php-fpm' ] || [ "$1" = 'bin/console' ]; then
 		sleep 1
 	done
 
-    bin/console doctrine:migrations:migrate --no-interaction
     bin/console doctrine:schema:update --force --no-interaction
     bin/console sylius:fixtures:load plus -n --no-interaction
 fi
