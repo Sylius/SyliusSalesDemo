@@ -52,10 +52,12 @@ services:
     volumes:
       # use a bind-mounted host directory, as we want to keep the media
       - ./public/media:/srv/sylius/public/media:ro
+      - /data/certs:/etc/nginx/certs:ro
     networks:
       - sylius
     ports:
       - 80:80
+      - 443:443
 
 networks:
   sylius:

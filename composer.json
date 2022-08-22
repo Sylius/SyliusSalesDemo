@@ -17,7 +17,7 @@
         "bitbag/mollie-plugin": "^4.0",
         "bitbag/sylius-adyen-plugin": "^1.1",
         "bitbag/wishlist-plugin": "dev-fixed-channel",
-        "sylius/paypal-plugin": "^1.2.1",
+        "sylius/paypal-plugin": "^1.4",
         "sylius/plus": "^1.0.0-ALPHA.7",
         "sylius/sylius": "1.12.x-dev as 1.11.6",
         "symfony/dotenv": "^5.4",
