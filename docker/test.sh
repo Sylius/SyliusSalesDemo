@@ -7,7 +7,7 @@ readonly sleep_time=10
 i=1
 time=$((timeout * sleep_time))
 
-until curl -L --fail http://localhost:80 2>/dev/null
+until curl -L --fail http://home.localhost:80 2>/dev/null
 do
     i=$((i+1))
 
