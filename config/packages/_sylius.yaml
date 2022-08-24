@@ -12,6 +12,7 @@ imports:
     - { resource: "@BitBagSyliusMolliePlugin/Resources/config/config.yaml" }
     - { resource: "@BitBagSyliusWishlistPlugin/Resources/config/config.yml" }
     - { resource: "@BitBagSyliusAdyenPlugin/Resources/config/config.yaml" }
+    - { resource: "@BitBagSyliusCmsPlugin/Resources/config/config.yml" }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'

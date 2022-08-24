@@ -69,4 +69,6 @@ return [
     Sylius\AdminOrderCreationPlugin\SyliusAdminOrderCreationPlugin::class => ['all' => true],
     BitBag\SyliusMolliePlugin\BitBagSyliusMolliePlugin::class => ['all' => true],
     BitBag\SyliusAdyenPlugin\BitBagSyliusAdyenPlugin::class => ['all' => true],
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
+    BitBag\SyliusCmsPlugin\BitBagSyliusCmsPlugin::class => ['all' => true],
 ];

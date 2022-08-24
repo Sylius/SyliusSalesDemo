@@ -1,4 +1,8 @@
-init:
+run:
+	docker compose build --build-arg SYLIUS_PLUS_TOKEN=${SYLIUS_PLUS_TOKEN}
+	docker compose up -d
+
+reset:
 	docker compose exec node yarn build
 	docker compose exec php bin/console sylius:fixtures:load plus -n
 

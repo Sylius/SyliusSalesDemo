@@ -5,7 +5,7 @@ ARG PHP_VERSION=8.0
 ARG NODE_VERSION=14
 ARG NGINX_VERSION=1.21
 ARG ALPINE_VERSION=3.15
-ARG COMPOSER_VERSION=2
+ARG COMPOSER_VERSION=2.4
 ARG PHP_EXTENSION_INSTALLER_VERSION=latest
 
 FROM composer:${COMPOSER_VERSION} AS composer
@@ -64,7 +64,8 @@ RUN set -eux; \
     APP_SECRET='' composer run-script post-install-cmd; \
     chmod +x bin/console; sync; \
     bin/console sylius:install:assets --no-interaction; \
-    bin/console sylius:theme:assets:install public --no-interaction
+    bin/console sylius:theme:assets:install public --no-interaction; \
+    bin/console ckeditor:install
 
 VOLUME /srv/sylius/var
 
