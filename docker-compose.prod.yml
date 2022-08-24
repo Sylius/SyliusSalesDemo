@@ -16,8 +16,8 @@ services:
       APP_ENV: prod
       APP_DEBUG: 0
       APP_SECRET: EDITME
-      HOME_HOSTNAME: home.sales.sylius.com
-      FASHION_HOSTNAME: fashion.sales.sylius.com
+      HOME_HOSTNAME: ${HOME_HOSTNAME:-home.localhost}
+      FASHION_HOSTNAME: ${FASHION_HOSTNAME:-fashion.localhost}
     volumes:
       # use a bind-mounted host directory, as we want to keep the sessions
       - ./var/sessions:/srv/sylius/var/sessions:rw

@@ -3,13 +3,26 @@ name: Build Docker Image
 on:
     push:
         branches-ignore:
-            - master
+            - 'dependabot/**'
+            - 'master'
+        paths-ignore:
+            - "*.md"
+    pull_request:
+        paths-ignore:
+            - "*.md"
 
 jobs:
     build-image:
+        name: Build Docker Image and Test Docker Compose
+        env:
+            MYSQL_PASSWORD: sylius-mysql
+            DOCKER_BUILDKIT: 1 # Requires Latest Buildx in docker CLI
+            COMPOSE_DOCKER_CLI_BUILD: 1 # Requires Latest Buildx in docker compose CLI
         strategy:
+            fail-fast: false
             matrix:
                 platform: [linux/amd64,linux/arm64]
+                docker_compose: [docker-compose.yml,docker-compose.prod.yml]
         
         runs-on: ubuntu-latest
         steps:
@@ -28,3 +41,25 @@ jobs:
                     cache-from: type=gha
                     cache-to: type=gha
                     build-args: SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }}
+                    load: true
+            -
+                name: Shutdown Default MySQL
+                run: sudo service mysql stop
+                if: matrix.platform == 'linux/amd64'
+            -
+                name: Checkout Code
+                uses: actions/checkout@v3
+                if: matrix.platform == 'linux/amd64'
+            -
+                name: Build Sylius Store
+                run: docker compose -f ${{ matrix.docker_compose }} build --build-arg SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }} 
+                if: matrix.platform == 'linux/amd64'
+            -
+                name: Setup Sylius Store
+                run: docker compose -f ${{ matrix.docker_compose }} up -d
+                if: matrix.platform == 'linux/amd64'
+            -
+                name: Health Check Store
+                run: ./docker/test.sh
+                if: matrix.platform == 'linux/amd64'
+                    
