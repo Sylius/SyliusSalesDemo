@@ -14,6 +14,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
+        "bitbag/cms-plugin": "^3.2",
         "bitbag/mollie-plugin": "^4.0",
         "bitbag/sylius-adyen-plugin": "^1.1",
         "bitbag/wishlist-plugin": "dev-fixed-channel",

@@ -64,7 +64,8 @@ RUN set -eux; \
     APP_SECRET='' composer run-script post-install-cmd; \
     chmod +x bin/console; sync; \
     bin/console sylius:install:assets --no-interaction; \
-    bin/console sylius:theme:assets:install public --no-interaction
+    bin/console sylius:theme:assets:install public --no-interaction; \
+    bin/console ckeditor:install
 
 VOLUME /srv/sylius/var
 
