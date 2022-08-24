@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-readonly timeout=100
-readonly sleep_time=5
+readonly timeout=600
+readonly sleep_time=10
 
 i=1
 time=$((timeout * sleep_time))
