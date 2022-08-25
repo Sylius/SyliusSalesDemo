@@ -14,6 +14,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
+        "bitbag/cms-plugin": "dev-xml-config",
         "bitbag/mollie-plugin": "^4.0",
         "bitbag/sylius-adyen-plugin": "^1.1",
         "bitbag/wishlist-plugin": "dev-fixed-channel",
@@ -59,6 +60,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/Ferror/SyliusWishlistPlugin.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Ferror/SyliusCmsPlugin.git"
         }
     ],
     "config": {

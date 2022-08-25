@@ -8,3 +8,8 @@ winzou_state_machine:
 bitbag_sylius_adyen:
     logger: true
     supported_types: ~
+
+twig:
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+        - '@BitBagSyliusCmsPlugin/Form/ckeditor_widget.html.twig'
