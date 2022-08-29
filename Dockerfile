@@ -27,8 +27,9 @@ COPY --from=php_extension_installer /usr/bin/install-php-extensions /usr/local/b
 RUN install-php-extensions apcu curl exif gd iconv intl mbstring pdo_mysql opcache xml zip
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
-COPY docker/php/php.ini /usr/local/etc/php/php.ini
-COPY docker/php/php-cli.ini /usr/local/etc/php/php-cli.ini
+COPY docker/php/prod/php.ini        /usr/local/etc/php/php.ini
+COPY docker/php/prod/php-cli.ini    /usr/local/etc/php/php-cli.ini
+COPY config/preload.php             /srv/sylius/config/preload.php
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
@@ -126,6 +127,9 @@ FROM sylius_php_prod AS sylius_php_dev
 WORKDIR /srv/sylius
 
 ARG APP_ENV=dev
+
+COPY docker/php/dev/php.ini        /usr/local/etc/php/php.ini
+COPY docker/php/dev/php-cli.ini    /usr/local/etc/php/php-cli.ini
 
 RUN set -eux; \
     composer install --prefer-dist --no-autoloader --no-interaction --no-scripts --no-progress; \
