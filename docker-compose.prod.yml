@@ -18,6 +18,7 @@ services:
       APP_SECRET: EDITME
       HOME_HOSTNAME: ${HOME_HOSTNAME:-home.localhost}
       FASHION_HOSTNAME: ${FASHION_HOSTNAME:-fashion.localhost}
+      SENTRY_DSN: ${SENTRY_DSN:?SENTRY_DSN is not set or empty}
     volumes:
       # use a bind-mounted host directory, as we want to keep the sessions
       - ./var/sessions:/srv/sylius/var/sessions:rw
