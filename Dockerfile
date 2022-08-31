@@ -47,7 +47,7 @@ ARG SYLIUS_PLUS_TOKEN
 COPY composer.* symfony.lock ./
 RUN set -eux; \
     composer config --global --auth http-basic.sylius.repo.packagist.com token ${SYLIUS_PLUS_TOKEN}; \
-    composer install --prefer-dist --no-autoloader --no-interaction --no-scripts --no-progress; \
+    composer install --prefer-dist --no-autoloader --no-interaction --no-scripts --no-progress --no-dev; \
     composer clear-cache
 
 # copy only specifically what we need
