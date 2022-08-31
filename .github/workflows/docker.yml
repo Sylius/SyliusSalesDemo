@@ -16,7 +16,7 @@ jobs:
         name: Build Docker Image and Test Docker Compose
         env:
             MYSQL_PASSWORD: sylius-mysql
-            SENTRY_DSN: mocked-dsn
+            SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
             DOCKER_BUILDKIT: 1 # Requires Latest Buildx in docker CLI
             COMPOSE_DOCKER_CLI_BUILD: 1 # Requires Latest Buildx in docker compose CLI
         strategy:
