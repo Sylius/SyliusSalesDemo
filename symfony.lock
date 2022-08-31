@@ -535,6 +535,18 @@
     "sebastian/version": {
         "version": "2.0.1"
     },
+    "sentry/sentry-symfony": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "4.0",
+            "ref": "3d8dc8c0f689e2e94f860d2e36f81fcc26348069"
+        },
+        "files": [
+            "config/packages/sentry.yaml"
+        ]
+    },
     "slevomat/coding-standard": {
         "version": "6.4.1"
     },

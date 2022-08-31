@@ -71,4 +71,5 @@ return [
     BitBag\SyliusAdyenPlugin\BitBagSyliusAdyenPlugin::class => ['all' => true],
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     BitBag\SyliusCmsPlugin\BitBagSyliusCmsPlugin::class => ['all' => true],
+    Sentry\SentryBundle\SentryBundle::class => ['prod' => true],
 ];
