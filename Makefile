@@ -4,7 +4,7 @@ run:
 
 prod:
 	MYSQL_PASSWORD=temp-password docker compose -f docker-compose.prod.yml build --build-arg SYLIUS_PLUS_TOKEN=${SYLIUS_PLUS_TOKEN}
-	MYSQL_PASSWORD=temp-password HOME_HOSTNAME=home.localhost docker compose -f docker-compose.prod.yml up -d
+	MYSQL_PASSWORD=temp-password docker compose -f docker-compose.prod.yml up -d
 
 reset:
 	docker compose exec node yarn build
