@@ -29,7 +29,7 @@ RUN install-php-extensions apcu curl exif gd iconv intl mbstring pdo_mysql opcac
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY docker/php/prod/php.ini        /usr/local/etc/php/php.ini
 COPY docker/php/prod/php-cli.ini    /usr/local/etc/php/php-cli.ini
-COPY config/preload.php             /srv/sylius/config/preload.php
+#COPY config/preload.php             /srv/sylius/config/preload.php
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1

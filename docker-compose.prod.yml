@@ -32,13 +32,10 @@ services:
     # in production, we may want to use a managed database service
     image: mysql:8.0
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: true
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
       MYSQL_DATABASE: sylius_prod
       MYSQL_USER: sylius
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:?MYSQL_PASSWORD is not set or empty}
-    volumes:
-      # use a bind-mounted host directory, because we never want to lose our data!
-      - ./docker/mysql/data:/var/lib/mysql:rw,delegated
     networks:
       - sylius
 
