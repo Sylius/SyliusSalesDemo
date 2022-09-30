@@ -14,6 +14,8 @@ imports:
     - { resource: "@BitBagSyliusAdyenPlugin/Resources/config/config.yaml" }
     - { resource: "@BitBagSyliusCmsPlugin/Resources/config/config.yml" }
 
+    - { resource: "@SetonoSyliusAnalyticsPlugin/Resources/config/app/config.yaml" }
+
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
     images_dir: "%kernel.project_dir%/public/media/image/"
