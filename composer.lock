@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b654a38f7d03565f01366a137232046b",
+    "content-hash": "a6eb1d1aabca8c0917ed3c9bdb00eff9",
     "packages": [
         {
             "name": "adyen/php-api-library",
@@ -664,16 +664,16 @@
         },
         {
             "name": "bitbag/wishlist-plugin",
-            "version": "dev-fixed-channel",
+            "version": "v2.0.14",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Ferror/SyliusWishlistPlugin.git",
-                "reference": "8f072f6933e71b3516a0a1aa21ac4d7d77d59e21"
+                "url": "https://github.com/BitBagCommerce/SyliusWishlistPlugin.git",
+                "reference": "89c63ba48fcb729e55452784db3352bd7e19062a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ferror/SyliusWishlistPlugin/zipball/8f072f6933e71b3516a0a1aa21ac4d7d77d59e21",
-                "reference": "8f072f6933e71b3516a0a1aa21ac4d7d77d59e21",
+                "url": "https://api.github.com/repos/BitBagCommerce/SyliusWishlistPlugin/zipball/89c63ba48fcb729e55452784db3352bd7e19062a",
+                "reference": "89c63ba48fcb729e55452784db3352bd7e19062a",
                 "shasum": ""
             },
             "require": {
@@ -725,19 +725,16 @@
                     "Tests\\BitBag\\SyliusWishlistPlugin\\": "tests/"
                 }
             },
-            "autoload-dev": {
-                "classmap": [
-                    "tests/Application/Kernel.php"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Wishlist plugin for Sylius.",
             "support": {
-                "source": "https://github.com/Ferror/SyliusWishlistPlugin/tree/fixed-channel"
+                "issues": "https://github.com/BitBagCommerce/SyliusWishlistPlugin/issues",
+                "source": "https://github.com/BitBagCommerce/SyliusWishlistPlugin/tree/v2.0.14"
             },
-            "time": "2022-08-18T17:24:32+00:00"
+            "time": "2022-09-28T12:27:24+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -7732,6 +7729,667 @@
             "time": "2022-05-30T12:09:35+00:00"
         },
         {
+            "name": "setono/bot-detection-bundle",
+            "version": "v1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/BotDetectionBundle.git",
+                "reference": "3e393f207ec4a29f5a9e27012833dbe241a3faa0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/BotDetectionBundle/zipball/3e393f207ec4a29f5a9e27012833dbe241a3faa0",
+                "reference": "3e393f207ec4a29f5a9e27012833dbe241a3faa0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "setono/symfony-main-request-trait": "^1.0",
+                "symfony/config": "^4.4 || ^5.4 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+                "twig/twig": "^2.14 || ^3.4"
+            },
+            "require-dev": {
+                "infection/infection": "^0.26",
+                "matomo/device-detector": "^5.0 || ^6.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.3",
+                "nette/php-generator": "^3.6",
+                "phpbench/phpbench": "^1.2",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16",
+                "psalm/plugin-symfony": "^3.1",
+                "roave/security-advisories": "dev-latest",
+                "setono/code-quality-pack": "^2.2",
+                "symfony/console": "^4.4 || ^5.4 || ^6.0",
+                "symfony/yaml": "^4.4 || ^5.4 || ^6.0",
+                "webmozart/assert": "^1.11"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Setono\\BotDetectionBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "A Symfony bundle that allows you to test if a user agent is a bot",
+            "support": {
+                "issues": "https://github.com/Setono/BotDetectionBundle/issues",
+                "source": "https://github.com/Setono/BotDetectionBundle/tree/v1.8.0"
+            },
+            "time": "2022-08-09T12:09:20+00:00"
+        },
+        {
+            "name": "setono/client-id",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/client-id.git",
+                "reference": "9640b9443c1936a27309cc1c0d0c27bbc01f4162"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/client-id/zipball/9640b9443c1936a27309cc1c0d0c27bbc01f4162",
+                "reference": "9640b9443c1936a27309cc1c0d0c27bbc01f4162",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "setono/client-id-contracts": "^0.2",
+                "symfony/uid": "^5.4 || ^6.0"
+            },
+            "provide": {
+                "setono/client-id-implementation": "1.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.21.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.15.1",
+                "setono/code-quality-pack": "^2.1",
+                "symfony/http-foundation": "^4.4 || ^5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Setono\\ClientId\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "Implementation of the setono/client-id-contracts",
+            "support": {
+                "issues": "https://github.com/Setono/client-id/issues",
+                "source": "https://github.com/Setono/client-id/tree/v0.2.1"
+            },
+            "time": "2022-06-21T08:01:39+00:00"
+        },
+        {
+            "name": "setono/client-id-bundle",
+            "version": "v0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/ClientIdBundle.git",
+                "reference": "783aa7fb3da734f98fc7f245c2901e31411a99a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/ClientIdBundle/zipball/783aa7fb3da734f98fc7f245c2901e31411a99a8",
+                "reference": "783aa7fb3da734f98fc7f245c2901e31411a99a8",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.12",
+                "php": ">=7.4",
+                "setono/client-id": "^0.2",
+                "setono/client-id-contracts": "^0.2",
+                "symfony/config": "^4.4 || ^5.4 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
+                "symfony/event-dispatcher": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.23.0",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+                "nyholm/symfony-bundle-test": "^1.7",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16.0",
+                "psalm/plugin-symfony": "^2.1",
+                "roave/security-advisories": "dev-latest",
+                "setono/code-quality-pack": "^2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Setono\\ClientIdBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "A Symfony bundle that allows you to track your visitors server side instead of client side",
+            "support": {
+                "issues": "https://github.com/Setono/ClientIdBundle/issues",
+                "source": "https://github.com/Setono/ClientIdBundle/tree/v0.2.1"
+            },
+            "time": "2022-06-21T08:00:56+00:00"
+        },
+        {
+            "name": "setono/client-id-contracts",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/client-id-contracts.git",
+                "reference": "afc7a22d8aaf6838c937336f81cc1c3c0c079fdb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/client-id-contracts/zipball/afc7a22d8aaf6838c937336f81cc1c3c0c079fdb",
+                "reference": "afc7a22d8aaf6838c937336f81cc1c3c0c079fdb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Setono\\ClientId\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Generic abstraction related to client id",
+            "support": {
+                "issues": "https://github.com/Setono/client-id-contracts/issues",
+                "source": "https://github.com/Setono/client-id-contracts/tree/v0.2.0"
+            },
+            "time": "2021-04-22T10:04:20+00:00"
+        },
+        {
+            "name": "setono/consent-bundle",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/ConsentBundle.git",
+                "reference": "7f9b33bf86fe9a189b9f2d0754b6d996d2736fa0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/ConsentBundle/zipball/7f9b33bf86fe9a189b9f2d0754b6d996d2736fa0",
+                "reference": "7f9b33bf86fe9a189b9f2d0754b6d996d2736fa0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "setono/client-id-bundle": "^0.2",
+                "setono/consent-contracts": "^0.1.3",
+                "symfony/config": "^4.4 || ^5.4 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.25.0",
+                "matthiasnoback/symfony-config-test": "^4.3",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.3",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.17",
+                "psalm/plugin-symfony": "^3.1",
+                "roave/security-advisories": "dev-latest",
+                "setono/code-quality-pack": "^2.2"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Setono\\ConsentBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "A Symfony bundle that integrates the consent contracts",
+            "support": {
+                "issues": "https://github.com/Setono/ConsentBundle/issues",
+                "source": "https://github.com/Setono/ConsentBundle/tree/v0.1.4"
+            },
+            "time": "2022-08-09T09:39:34+00:00"
+        },
+        {
+            "name": "setono/consent-contracts",
+            "version": "v0.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/consent-contracts.git",
+                "reference": "f2c9d29d690131504dd2e90e131c656ad9e0cdf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/consent-contracts/zipball/f2c9d29d690131504dd2e90e131c656ad9e0cdf1",
+                "reference": "f2c9d29d690131504dd2e90e131c656ad9e0cdf1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.4",
+                "setono/client-id-contracts": "^0.2",
+                "webmozart/assert": "^1.10"
+            },
+            "require-dev": {
+                "infection/infection": "^0.25.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16.1",
+                "setono/code-quality-pack": "^2.1.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Setono\\Consent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Generic abstraction related to consent",
+            "keywords": [
+                "consent",
+                "gdpr"
+            ],
+            "support": {
+                "issues": "https://github.com/Setono/consent-contracts/issues",
+                "source": "https://github.com/Setono/consent-contracts/tree/v0.1.3"
+            },
+            "time": "2021-11-22T10:11:25+00:00"
+        },
+        {
+            "name": "setono/doctrine-object-manager-trait",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/doctrine-object-manager-trait.git",
+                "reference": "0dc25f1c360307f07509bc431063ebe05d577e60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/doctrine-object-manager-trait/zipball/0dc25f1c360307f07509bc431063ebe05d577e60",
+                "reference": "0dc25f1c360307f07509bc431063ebe05d577e60",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/persistence": "^1.3 || ^2.0",
+                "php": ">=7.4",
+                "webmozart/assert": "^1.10"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.8",
+                "infection/infection": "^0.21.0",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.15.1",
+                "roave/security-advisories": "dev-latest",
+                "setono/code-quality-pack": "^2.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Setono\\DoctrineObjectManagerTrait\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "A very simple library that offers an Object manager trait to get the object manager for a given class",
+            "support": {
+                "issues": "https://github.com/Setono/doctrine-object-manager-trait/issues",
+                "source": "https://github.com/Setono/doctrine-object-manager-trait/tree/v1.1.0"
+            },
+            "time": "2022-04-27T14:04:31+00:00"
+        },
+        {
+            "name": "setono/google-analytics-measurement-protocol",
+            "version": "v0.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/google-analytics-measurement-protocol.git",
+                "reference": "8f84d582eea82fa3017366ad54cb6197128af817"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/google-analytics-measurement-protocol/zipball/8f84d582eea82fa3017366ad54cb6197128af817",
+                "reference": "8f84d582eea82fa3017366ad54cb6197128af817",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.4",
+                "php-http/discovery": "^1.13",
+                "psr/http-client": "^1.0",
+                "psr/http-client-implementation": "^1",
+                "psr/http-factory": "^1.0",
+                "psr/http-factory-implementation": "^1",
+                "psr/http-message": "^1.0",
+                "webmozart/assert": "^1.10"
+            },
+            "require-dev": {
+                "infection/infection": "^0.26",
+                "kriswallsmith/buzz": "^1.2",
+                "nyholm/psr7": "^1.4",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-symfony": "^3.1",
+                "setono/code-quality-pack": "^2.1.3",
+                "symfony/http-foundation": "^4.4 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Setono\\GoogleAnalyticsMeasurementProtocol\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "A library that eases the generation of measurement protocol payloads",
+            "support": {
+                "issues": "https://github.com/Setono/google-analytics-measurement-protocol/issues",
+                "source": "https://github.com/Setono/google-analytics-measurement-protocol/tree/v0.4.3"
+            },
+            "time": "2022-01-19T11:17:32+00:00"
+        },
+        {
+            "name": "setono/google-analytics-server-side-tracking-bundle",
+            "version": "v0.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/GoogleAnalyticsServerSideTrackingBundle.git",
+                "reference": "79902ed5dba3570a4a1cd575a89cf318a57b0bf2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/GoogleAnalyticsServerSideTrackingBundle/zipball/79902ed5dba3570a4a1cd575a89cf318a57b0bf2",
+                "reference": "79902ed5dba3570a4a1cd575a89cf318a57b0bf2",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/doctrine-bundle": "^1.12 || ^2.2",
+                "doctrine/orm": "^2.7",
+                "doctrine/persistence": "^1.3 || ^2.2",
+                "gedmo/doctrine-extensions": "^2.4 || ^3.1",
+                "nyholm/psr7": "^1.3",
+                "php": ">=7.4",
+                "setono/bot-detection-bundle": "^1.7",
+                "setono/client-id-bundle": "^0.2",
+                "setono/client-id-contracts": "^0.2",
+                "setono/consent-bundle": "^0.1",
+                "setono/consent-contracts": "^0.1.3",
+                "setono/doctrine-object-manager-trait": "^1.0",
+                "setono/google-analytics-measurement-protocol": "^0.4.3",
+                "setono/symfony-main-request-trait": "^1.0",
+                "symfony/config": "^4.4 || ^5.4 || ^6.0",
+                "symfony/console": "^4.4 || ^5.4 || ^6.0",
+                "symfony/dependency-injection": "^4.4 || ^5.4 || ^6.0",
+                "symfony/event-dispatcher": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-client": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0",
+                "symfony/lock": "^4.4 || ^5.4 || ^6.0",
+                "symfony/messenger": "^4.4 || ^5.4 || ^6.0",
+                "symfony/uid": "^5.4 || ^6.0",
+                "symfony/workflow": "^4.4 || ^5.4 || ^6.0",
+                "webmozart/assert": "^1.11"
+            },
+            "require-dev": {
+                "kriswallsmith/buzz": "^1.2",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.3",
+                "nyholm/symfony-bundle-test": "^1.8",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.17",
+                "psalm/plugin-symfony": "^3.1",
+                "roave/security-advisories": "dev-latest",
+                "setono/code-quality-pack": "^2.2",
+                "symfony/security-bundle": "^4.4 || ^5.4 || ^6.0",
+                "weirdan/doctrine-psalm-plugin": "^2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Setono\\GoogleAnalyticsServerSideTrackingBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "A Symfony bundle that allows you to track your visitors server side instead of client side",
+            "support": {
+                "issues": "https://github.com/Setono/GoogleAnalyticsServerSideTrackingBundle/issues",
+                "source": "https://github.com/Setono/GoogleAnalyticsServerSideTrackingBundle/tree/v0.3.9"
+            },
+            "time": "2022-08-18T11:49:24+00:00"
+        },
+        {
+            "name": "setono/sylius-analytics-plugin",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/SyliusAnalyticsPlugin.git",
+                "reference": "48f6b25eb47dd00800e76b73bb0d1d21be08e855"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/SyliusAnalyticsPlugin/zipball/48f6b25eb47dd00800e76b73bb0d1d21be08e855",
+                "reference": "48f6b25eb47dd00800e76b73bb0d1d21be08e855",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "^1.6",
+                "ext-json": "*",
+                "knplabs/knp-menu": "^3.3",
+                "php": ">=7.4",
+                "psr/event-dispatcher": "^1.0",
+                "setono/google-analytics-measurement-protocol": "^0.4",
+                "setono/google-analytics-server-side-tracking-bundle": "^0.2 || ^0.3",
+                "setono/symfony-main-request-trait": "^1.0",
+                "sylius/resource-bundle": "^1.6",
+                "symfony/config": "^4.4 || ^5.4",
+                "symfony/dependency-injection": "^4.4 || ^5.4",
+                "symfony/event-dispatcher": "^4.4 || ^5.4",
+                "symfony/form": "^4.4 || ^5.4",
+                "symfony/http-foundation": "^4.4 || ^5.4",
+                "symfony/http-kernel": "^4.4 || ^5.4",
+                "webmozart/assert": "^1.11"
+            },
+            "require-dev": {
+                "api-platform/core": "^2.6",
+                "friendsofsymfony/oauth-server-bundle": ">2.0.0-alpha.0 ^2.0@dev",
+                "lexik/jwt-authentication-bundle": "^2.16",
+                "loevgaard/sylius-brand-plugin": "^2.1",
+                "matthiasnoback/symfony-config-test": "^4.3",
+                "matthiasnoback/symfony-dependency-injection-test": "^4.3",
+                "phpunit/phpunit": "^9.5",
+                "polishsymfonycommunity/symfony-mocker-container": "^1.0",
+                "psalm/plugin-phpunit": "^0.17",
+                "psalm/plugin-symfony": "^3.1",
+                "roave/security-advisories": "dev-latest",
+                "setono/code-quality-pack": "^2.2",
+                "setono/sylius-behat-pack": "^0.2",
+                "sylius/admin-api-bundle": "^1.11",
+                "sylius/sylius": "~1.10.14",
+                "symfony/debug-bundle": "^4.4 || ^5.4 || ^6.0",
+                "symfony/dotenv": "^4.4 || ^5.4 || ^6.0",
+                "symfony/intl": "^4.4 || ^5.4 || ^6.0",
+                "symfony/property-info": "^4.4 || ^5.4 || ^6.0",
+                "symfony/serializer": "^4.4 || ^5.4 || ^6.0",
+                "symfony/web-profiler-bundle": "^4.4 || ^5.4 || ^6.0",
+                "symfony/webpack-encore-bundle": "^1.14"
+            },
+            "type": "sylius-plugin",
+            "autoload": {
+                "psr-4": {
+                    "Setono\\SyliusAnalyticsPlugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Google Analytics plugin for Sylius",
+            "keywords": [
+                "analytics",
+                "google",
+                "setono",
+                "sylius",
+                "sylius-plugin"
+            ],
+            "support": {
+                "issues": "https://github.com/Setono/SyliusAnalyticsPlugin/issues",
+                "source": "https://github.com/Setono/SyliusAnalyticsPlugin/tree/v3.0.0"
+            },
+            "time": "2022-08-11T09:01:12+00:00"
+        },
+        {
+            "name": "setono/symfony-main-request-trait",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Setono/symfony-main-request-trait.git",
+                "reference": "0278d45abb5b3cfe88de472e8b30b40f2d0d3368"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Setono/symfony-main-request-trait/zipball/0278d45abb5b3cfe88de472e8b30b40f2d0d3368",
+                "reference": "0278d45abb5b3cfe88de472e8b30b40f2d0d3368",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "symfony/http-foundation": "^4.4 || ^5.4 || ^6.0",
+                "symfony/http-kernel": "^4.4 || ^5.4 || ^6.0"
+            },
+            "require-dev": {
+                "infection/infection": "^0.26",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16",
+                "psalm/plugin-symfony": "^3.1",
+                "roave/security-advisories": "dev-latest",
+                "setono/code-quality-pack": "^2.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Setono\\MainRequestTrait\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joachim Løvgaard",
+                    "email": "joachim@loevgaard.dk"
+                }
+            ],
+            "description": "A PHP trait that makes the main/master request issue work on multiple Symfony versions",
+            "support": {
+                "issues": "https://github.com/Setono/symfony-main-request-trait/issues",
+                "source": "https://github.com/Setono/symfony-main-request-trait/tree/v1.0.0"
+            },
+            "time": "2022-06-07T13:41:50+00:00"
+        },
+        {
             "name": "sonata-project/block-bundle",
             "version": "4.17.0",
             "source": {
@@ -12082,6 +12740,85 @@
             "time": "2022-07-20T11:34:24+00:00"
         },
         {
+            "name": "symfony/lock",
+            "version": "v5.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/lock.git",
+                "reference": "41a308008d92d30cae5615d903c4d46d95932eea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/lock/zipball/41a308008d92d30cae5615d903c4d46d95932eea",
+                "reference": "41a308008d92d30cae5615d903c4d46d95932eea",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "psr/log": "^1|^2|^3",
+                "symfony/deprecation-contracts": "^2.1|^3",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "doctrine/dbal": "<2.13"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^2.13|^3.0",
+                "predis/predis": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Lock\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jérémy Derussé",
+                    "email": "jeremy@derusse.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Creates and manages locks, a mechanism to provide exclusive access to a shared resource",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cas",
+                "flock",
+                "locking",
+                "mutex",
+                "redlock",
+                "semaphore"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/lock/tree/v5.4.10"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-09T13:29:56+00:00"
+        },
+        {
             "name": "symfony/messenger",
             "version": "v5.4.11",
             "source": {
@@ -14639,6 +15376,80 @@
             "time": "2022-04-03T13:03:10+00:00"
         },
         {
+            "name": "symfony/uid",
+            "version": "v5.4.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/uid.git",
+                "reference": "7e727b75ee099d530d1e93ed0897a0d89c146d16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/uid/zipball/7e727b75ee099d530d1e93ed0897a0d89c146d16",
+                "reference": "7e727b75ee099d530d1e93ed0897a0d89c146d16",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-uuid": "^1.15"
+            },
+            "require-dev": {
+                "symfony/console": "^4.4|^5.0|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Uid\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an object-oriented API to generate and represent UIDs",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "UID",
+                "ulid",
+                "uuid"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/uid/tree/v5.4.13"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-09-09T09:04:10+00:00"
+        },
+        {
             "name": "symfony/validator",
             "version": "v5.4.12",
             "source": {
@@ -15074,6 +15885,88 @@
             "time": "2022-07-13T17:07:35+00:00"
         },
         {
+            "name": "symfony/workflow",
+            "version": "v5.4.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/workflow.git",
+                "reference": "c70047328e4b3229fb770c09ac6463d5ee88fbfc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/workflow/zipball/c70047328e4b3229fb770c09ac6463d5ee88fbfc",
+                "reference": "c70047328e4b3229fb770c09ac6463d5ee88fbfc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.15"
+            },
+            "conflict": {
+                "symfony/event-dispatcher": "<4.4"
+            },
+            "require-dev": {
+                "psr/log": "^1|^2|^3",
+                "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+                "symfony/event-dispatcher": "^4.4|^5.0|^6.0",
+                "symfony/expression-language": "^4.4|^5.0|^6.0",
+                "symfony/security-core": "^4.4|^5.0|^6.0",
+                "symfony/validator": "^4.4|^5.0|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Workflow\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Grégoire Pineau",
+                    "email": "lyrixx@lyrixx.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides tools for managing a workflow or finite state machine",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "petrinet",
+                "place",
+                "state",
+                "statemachine",
+                "transition",
+                "workflow"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/workflow/tree/v5.4.11"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-07-11T15:34:21+00:00"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v5.4.12",
             "source": {
@@ -15219,16 +16112,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.4.2",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "e07cdd3d430cd7e453c31b36eb5ad6c0c5e43077"
+                "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/e07cdd3d430cd7e453c31b36eb5ad6c0c5e43077",
-                "reference": "e07cdd3d430cd7e453c31b36eb5ad6c0c5e43077",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c38fd6b0b7f370c198db91ffd02e23b517426b58",
+                "reference": "c38fd6b0b7f370c198db91ffd02e23b517426b58",
                 "shasum": ""
             },
             "require": {
@@ -15279,7 +16172,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.4.2"
+                "source": "https://github.com/twigphp/Twig/tree/v3.4.3"
             },
             "funding": [
                 {
@@ -15291,7 +16184,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-12T06:47:24+00:00"
+            "time": "2022-09-28T08:42:51+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -19775,7 +20668,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "bitbag/cms-plugin": 20,
-        "bitbag/wishlist-plugin": 20,
         "sylius/plus": 15,
         "sylius/sylius": 20
     },

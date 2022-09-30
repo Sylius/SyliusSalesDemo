@@ -72,4 +72,8 @@ return [
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
     BitBag\SyliusCmsPlugin\BitBagSyliusCmsPlugin::class => ['all' => true],
     Sentry\SentryBundle\SentryBundle::class => ['prod' => true],
+    Setono\BotDetectionBundle\SetonoBotDetectionBundle::class => ['all' => true],
+    Setono\ClientIdBundle\SetonoClientIdBundle::class => ['all' => true],
+    Setono\ConsentBundle\SetonoConsentBundle::class => ['all' => true],
+    Setono\GoogleAnalyticsServerSideTrackingBundle\SetonoGoogleAnalyticsServerSideTrackingBundle::class => ['all' => true],
 ];
