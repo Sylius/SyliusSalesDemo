@@ -11,7 +11,7 @@ services:
       - mysql
     environment:
       DATABASE_URL: mysql://sylius:${MYSQL_PASSWORD}@mysql/sylius_prod
-      MAILER_URL: null://localhost
+      MAILER_DSN: null://localhost
       PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
       APP_ENV: prod
       APP_DEBUG: 0

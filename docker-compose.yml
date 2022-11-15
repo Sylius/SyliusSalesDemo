@@ -14,7 +14,7 @@ services:
             APP_DEBUG: 1
             APP_SECRET: EDITME
             DATABASE_URL: mysql://sylius:${MYSQL_PASSWORD:-nopassword}@mysql/sylius
-            MAILER_URL: smtp://mailhog:1025
+            MAILER_DSN: smtp://mailhog:1025
             PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
             HOME_HOSTNAME: home.localhost
             FASHION_HOSTNAME: fashion.localhost
