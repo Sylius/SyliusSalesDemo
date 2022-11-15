@@ -41,6 +41,7 @@ WORKDIR /srv/sylius
 
 # build for production
 ENV APP_ENV=prod
+ENV SENTRY_DSN=""
 ARG SYLIUS_PLUS_TOKEN
 
 COPY sylius/composer.json sylius/composer.lock sylius/symfony.lock ./
@@ -60,8 +61,8 @@ COPY sylius/translations translations/
 RUN set -eux; \
     mkdir -p var/cache var/log; \
     composer dump-autoload --classmap-authoritative; \
-    APP_SECRET='' composer run-script post-install-cmd; \
-    chmod +x bin/console; sync; \
+    chmod +x bin/console; \
+    sync; \
     bin/console sylius:install:assets --no-interaction; \
     bin/console sylius:theme:assets:install public --no-interaction; \
     bin/console ckeditor:install
