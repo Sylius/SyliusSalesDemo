@@ -20,6 +20,7 @@ class GatewayConfig extends BaseGatewayConfig implements GatewayConfigInterface
 
     /**
      * @var ArrayCollection
+     *
      * @ORM\OneToMany(
      *     targetEntity="BitBag\SyliusMolliePlugin\Entity\MollieGatewayConfig",
      *     mappedBy="gateway",

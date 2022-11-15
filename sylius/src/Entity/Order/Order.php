@@ -28,6 +28,7 @@ class Order extends BaseOrder implements OrderInterface, ReturnsOrderInterface, 
 
     /**
      * @var bool
+     *
      * @ORM\Column(type="boolean", name="abandoned_email")
      */
     protected $abandonedEmail = false;
