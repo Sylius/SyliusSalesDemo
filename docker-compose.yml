@@ -19,6 +19,8 @@ services:
             HOME_HOSTNAME: home.localhost
             FASHION_HOSTNAME: fashion.localhost
             MESSENGER_TRANSPORT_DSN: sync://
+            WKHTMLTOPDF_PATH: /usr/local/bin/wkhtmltopdf
+            WKHTMLTOIMAGE_PATH: /usr/local/bin/wkhtmltoimage
         volumes:
             - ./sylius:/srv/sylius:rw,cached
             # if you develop on Linux, you may use a bind-mounted host directory instead
