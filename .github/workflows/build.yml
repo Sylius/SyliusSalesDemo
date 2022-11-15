@@ -87,6 +87,11 @@ jobs:
             -
                 name: Run webserver
                 run: symfony server:start --port=8080 --dir=public --daemon
+                
+            -
+                name: Validate composer.json
+                run: composer validate --ansi --strict --no-check-publish
+                continue-on-error: true
 
             -
                 name: Restrict Symfony version
@@ -138,7 +143,7 @@ jobs:
             -
                 name: Prepare test application database
                 run: |
-                    APP_DEBUG=1 bin/console doctrine:database:create -vvv
+                    bin/console doctrine:database:create -vvv
                     bin/console doctrine:migrations:migrate -n -vvv
                     bin/console doctrine:schema:update -f -vvv
 
@@ -164,11 +169,6 @@ jobs:
             -
                 name: Load fixtures
                 run: bin/console sylius:fixtures:load plus -n
-
-            -   
-                name: Validate composer.json
-                run: composer validate --ansi --strict --no-check-publish
-                continue-on-error: true
             
             -   
                 name: Run security check
