@@ -54,6 +54,7 @@
         "encore:watch": "encore dev --watch",
         "encore:build:dev": "encore dev",
         "encore:build:prod": "encore production",
+        "gulp:watch": "gulp watch",
         "gulp:build": "gulp build",
         "lint": "yarn lint:js",
         "lint:js": "eslint gulpfile.babel.js src/Sylius/Bundle/AdminBundle/gulpfile.babel.js src/Sylius/Bundle/ShopBundle/gulpfile.babel.js src/Sylius/Bundle/UiBundle/Resources/private/js src/Sylius/Bundle/AdminBundle/Resources/private/js src/Sylius/Bundle/ShopBundle/Resources/private/js",
