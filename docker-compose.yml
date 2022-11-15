@@ -18,6 +18,7 @@ services:
             PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
             HOME_HOSTNAME: home.localhost
             FASHION_HOSTNAME: fashion.localhost
+            MESSENGER_TRANSPORT_DSN: sync://
         volumes:
             - ./sylius:/srv/sylius:rw,cached
             # if you develop on Linux, you may use a bind-mounted host directory instead

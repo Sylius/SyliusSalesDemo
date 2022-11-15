@@ -19,6 +19,7 @@ services:
       HOME_HOSTNAME: ${HOME_HOSTNAME:-home.localhost}
       FASHION_HOSTNAME: ${FASHION_HOSTNAME:-fashion.localhost}
       SENTRY_DSN: ${SENTRY_DSN:?SENTRY_DSN is not set or empty}
+      MESSENGER_TRANSPORT_DSN: sync://
     volumes:
       # use a bind-mounted host directory, as we want to keep the sessions
       - ./sylius/var/sessions:/srv/sylius/var/sessions:rw
