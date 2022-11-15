@@ -19,7 +19,7 @@
         "bitbag/cms-plugin": "dev-xml-config",
         "bitbag/mollie-plugin": "^4.0",
         "bitbag/sylius-adyen-plugin": "^1.1",
-        "bitbag/wishlist-plugin": "dev-fixed-channel",
+        "bitbag/wishlist-plugin": "^2.0",
         "sentry/sentry-symfony": "^4.3",
         "sylius/paypal-plugin": "^1.4",
         "sylius/plus": "^1.0.0-ALPHA.7",
@@ -60,10 +60,6 @@
         {
             "type": "composer",
             "url": "https://sylius.repo.packagist.com/sylius/"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Ferror/SyliusWishlistPlugin.git"
         },
         {
             "type": "vcs",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "927c85da11f509cb79cc2305b7416883",
+    "content-hash": "810b6b04ab2d4f329ba2c231181707ba",
     "packages": [
         {
             "name": "adyen/php-api-library",
@@ -664,16 +664,16 @@
         },
         {
             "name": "bitbag/wishlist-plugin",
-            "version": "dev-fixed-channel",
+            "version": "v2.0.14",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Ferror/SyliusWishlistPlugin.git",
-                "reference": "8f072f6933e71b3516a0a1aa21ac4d7d77d59e21"
+                "url": "https://github.com/BitBagCommerce/SyliusWishlistPlugin.git",
+                "reference": "89c63ba48fcb729e55452784db3352bd7e19062a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ferror/SyliusWishlistPlugin/zipball/8f072f6933e71b3516a0a1aa21ac4d7d77d59e21",
-                "reference": "8f072f6933e71b3516a0a1aa21ac4d7d77d59e21",
+                "url": "https://api.github.com/repos/BitBagCommerce/SyliusWishlistPlugin/zipball/89c63ba48fcb729e55452784db3352bd7e19062a",
+                "reference": "89c63ba48fcb729e55452784db3352bd7e19062a",
                 "shasum": ""
             },
             "require": {
@@ -725,19 +725,16 @@
                     "Tests\\BitBag\\SyliusWishlistPlugin\\": "tests/"
                 }
             },
-            "autoload-dev": {
-                "classmap": [
-                    "tests/Application/Kernel.php"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Wishlist plugin for Sylius.",
             "support": {
-                "source": "https://github.com/Ferror/SyliusWishlistPlugin/tree/fixed-channel"
+                "issues": "https://github.com/BitBagCommerce/SyliusWishlistPlugin/issues",
+                "source": "https://github.com/BitBagCommerce/SyliusWishlistPlugin/tree/v2.0.14"
             },
-            "time": "2022-08-18T17:24:32+00:00"
+            "time": "2022-09-28T12:27:24+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -19781,7 +19778,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "bitbag/cms-plugin": 20,
-        "bitbag/wishlist-plugin": 20,
         "sylius/sylius": 20
     },
     "prefer-stable": true,
