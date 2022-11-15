@@ -30,8 +30,11 @@ jobs:
         env:
             APP_ENV: test_cached
             APP_SECRET: "s$cret"
+            APP_DEBUG: 0
             DATABASE_URL: "mysql://root:root@127.0.0.1/sylius?serverVersion=${{ matrix.mysql }}"
             MESSENGER_TRANSPORT_DSN: "sync://"
+            WKHTMLTOPDF_PATH: /usr/local/bin/wkhtmltopdf
+            WKHTMLTOIMAGE_PATH: /usr/local/bin/wkhtmltoimage
         
         steps:
             -
