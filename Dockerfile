@@ -50,6 +50,7 @@ RUN set -eux; \
     composer clear-cache
 
 # copy only specifically what we need
+COPY sylius/.env sylius/.env.prod sylius/.env.test sylius/.env.test_cached ./
 COPY sylius/bin bin/
 COPY sylius/config config/
 COPY sylius/public public/
