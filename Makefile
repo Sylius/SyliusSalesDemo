@@ -7,7 +7,7 @@ prod:
 	docker compose -f docker-compose.prod.yml up -d
 
 reset:
-	docker compose exec node yarn build
+	docker compose exec node yarn gulp:build
 	docker compose exec php bin/console sylius:fixtures:load plus -n
 
 phpunit:

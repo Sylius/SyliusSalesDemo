@@ -102,13 +102,13 @@ COPY --from=sylius_php_prod /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/S
 
 COPY sylius/gulpfile.babel.js sylius/.babelrc ./
 RUN set -eux; \
-    GULP_ENV=prod yarn build
+    GULP_ENV=prod yarn gulp:build
 
 COPY docker/node/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
 RUN chmod +x /usr/local/bin/docker-entrypoint
 
 ENTRYPOINT ["docker-entrypoint"]
-CMD ["yarn", "build"]
+CMD ["yarn", "gulp:build"]
 
 FROM nginx:${NGINX_VERSION}-alpine AS sylius_nginx
 

@@ -50,7 +50,7 @@ services:
         build:
             context: .
             target: sylius_node
-        command: ["yarn", "watch"]
+        command: ["yarn", "gulp:watch"]
         depends_on:
             - php
         environment:
