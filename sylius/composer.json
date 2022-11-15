@@ -22,9 +22,9 @@
         "sylius/paypal-plugin": "^1.4",
         "sylius/plus": "^1.0.0-ALPHA.7",
         "sylius/sylius": "1.12.x-dev as 1.11.7",
-        "symfony/dotenv": "^5.4",
         "symfony/flex": "^2.1",
-        "symfony/monolog-bundle": "^3.8"
+        "symfony/monolog-bundle": "^3.8",
+        "symfony/runtime": "5.4.*"
     },
     "require-dev": {
         "behat/behat": "^3.7",
@@ -97,13 +97,14 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
             "symfony/flex": true,
-            "composer/package-versions-deprecated": true
+            "composer/package-versions-deprecated": true,
+            "symfony/runtime": true
         }
     },
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^5.4",
+            "require": "5.4.*",
             "endpoint": [
                 "flex://defaults"
             ]
