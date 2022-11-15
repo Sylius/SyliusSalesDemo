@@ -29,7 +29,7 @@ RUN install-php-extensions apcu curl exif gd iconv intl mbstring pdo_mysql opcac
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY docker/php/prod/php.ini        /usr/local/etc/php/php.ini
 COPY docker/php/prod/php-cli.ini    /usr/local/etc/php/php-cli.ini
-COPY config/preload.php             /srv/sylius/config/preload.php
+COPY sylius/config/preload.php      /srv/sylius/config/preload.php
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
@@ -40,24 +40,22 @@ ENV PATH="${PATH}:/root/.composer/vendor/bin"
 WORKDIR /srv/sylius
 
 # build for production
-ARG APP_ENV=prod
+ENV APP_ENV=prod
 ARG SYLIUS_PLUS_TOKEN
 
-# prevent the reinstallation of vendors at every changes in the source code
-COPY composer.* symfony.lock ./
+COPY sylius/composer.json sylius/composer.lock sylius/symfony.lock ./
 RUN set -eux; \
     composer config --global --auth http-basic.sylius.repo.packagist.com token ${SYLIUS_PLUS_TOKEN}; \
     composer install --prefer-dist --no-autoloader --no-interaction --no-scripts --no-progress --no-dev; \
     composer clear-cache
 
 # copy only specifically what we need
-COPY .env .env.prod .env.test .env.test_cached ./
-COPY bin bin/
-COPY config config/
-COPY public public/
-COPY src src/
-COPY templates templates/
-COPY translations translations/
+COPY sylius/bin bin/
+COPY sylius/config config/
+COPY sylius/public public/
+COPY sylius/src src/
+COPY sylius/templates templates/
+COPY sylius/translations translations/
 
 RUN set -eux; \
     mkdir -p var/cache var/log; \
@@ -67,8 +65,6 @@ RUN set -eux; \
     bin/console sylius:install:assets --no-interaction; \
     bin/console sylius:theme:assets:install public --no-interaction; \
     bin/console ckeditor:install
-
-VOLUME /srv/sylius/var
 
 VOLUME /srv/sylius/public/media
 
@@ -91,7 +87,7 @@ RUN set -eux; \
 	;
 
 # prevent the reinstallation of vendors at every changes in the source code
-COPY package.json yarn.lock ./
+COPY sylius/package.json sylius/yarn.lock ./
 RUN set -eux; \
     yarn install; \
     yarn cache clean
@@ -103,7 +99,7 @@ COPY --from=sylius_php_prod /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/S
 COPY --from=sylius_php_prod /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/gulpfile.babel.js    vendor/sylius/sylius/src/Sylius/Bundle/AdminBundle/gulpfile.babel.js
 COPY --from=sylius_php_prod /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/gulpfile.babel.js     vendor/sylius/sylius/src/Sylius/Bundle/ShopBundle/gulpfile.babel.js
 
-COPY gulpfile.babel.js .babelrc ./
+COPY sylius/gulpfile.babel.js sylius/.babelrc ./
 RUN set -eux; \
     GULP_ENV=prod yarn build
 
@@ -126,7 +122,7 @@ FROM sylius_php_prod AS sylius_php_dev
 
 WORKDIR /srv/sylius
 
-ARG APP_ENV=dev
+ENV APP_ENV=dev
 
 COPY docker/php/dev/php.ini        /usr/local/etc/php/php.ini
 COPY docker/php/dev/php-cli.ini    /usr/local/etc/php/php-cli.ini
