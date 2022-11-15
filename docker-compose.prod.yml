@@ -21,9 +21,9 @@ services:
       SENTRY_DSN: ${SENTRY_DSN:?SENTRY_DSN is not set or empty}
     volumes:
       # use a bind-mounted host directory, as we want to keep the sessions
-      - ./var/sessions:/srv/sylius/var/sessions:rw
+      - ./sylius/var/sessions:/srv/sylius/var/sessions:rw
       # use a bind-mounted host directory, as we want to keep the media
-      - ./public/media:/srv/sylius/public/media:rw
+      - ./sylius/public/media:/srv/sylius/public/media:rw
     networks:
       - sylius
 
@@ -52,7 +52,7 @@ services:
       - php
     volumes:
       # use a bind-mounted host directory, as we want to keep the media
-      - ./public/media:/srv/sylius/public/media:ro
+      - ./sylius/public/media:/srv/sylius/public/media:ro
     networks:
       - sylius
     ports:
