@@ -4,8 +4,6 @@ services:
     build:
       context: .
       target: sylius_php_prod
-      args:
-        SYLIUS_PLUS_TOKEN: ${SYLIUS_PLUS_TOKEN:?SYLIUS_PLUS_TOKEN is not set or empty}
     depends_on:
       - mysql
     environment:
