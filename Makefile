@@ -3,8 +3,8 @@ run:
 	docker compose up -d
 
 prod:
-	docker compose -f docker-compose.prod.yml build --build-arg SYLIUS_PLUS_TOKEN=${SYLIUS_PLUS_TOKEN}
-	docker compose -f docker-compose.prod.yml up -d
+	MYSQL_PASSWORD=so$me docker compose -f docker-compose.prod.yml build --build-arg SYLIUS_PLUS_TOKEN=${SYLIUS_PLUS_TOKEN}
+	MYSQL_PASSWORD=so$me docker compose -f docker-compose.prod.yml up -d
 
 reset:
 	docker compose exec node yarn gulp:build
