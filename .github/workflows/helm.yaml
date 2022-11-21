@@ -1,0 +1,77 @@
+name: Lint and Test Helm Chart
+
+on:
+    push:
+        branches-ignore:
+            - 'dependabot/**'
+            - 'master'
+        paths-ignore:
+            - "*.md"
+    pull_request:
+        paths-ignore:
+            - "*.md"
+    workflow_dispatch: ~
+
+jobs:
+    lint-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout Code
+                uses: actions/checkout@v3
+
+            -   name: Setup Python
+                uses: actions/setup-python@v4
+                with:
+                    python-version: 3.7
+
+            -   name: Set up chart-testing
+                uses: helm/chart-testing-action@v2.3.0
+
+            -   name: Create kind cluster
+                uses: helm/kind-action@v1.3.0
+
+            -   name: Install Helm Dependencies
+                run: |
+                    helm repo add bitnami2 https://charts.bitnami.com/bitnami
+                    helm dependency build chart/sylius
+
+            -   name: Validate Helm Chart
+                run: helm lint chart/sylius --values chart/sylius/values.yaml
+
+            # START BUILDING APP
+            -   name: Set Up QEMU
+                uses: docker/setup-qemu-action@v2
+
+            -   name: Set Up Docker Buildx
+                uses: docker/setup-buildx-action@v2
+    
+            -   name: Create Sylius-Standard Project
+                run: git clone https://github.com/Sylius/Sylius-Standard.git chart/app
+    
+            -   name: Build PHP Image
+                uses: docker/build-push-action@v3
+                with:
+                    push: false
+                    context: chart/app
+                    tags: sylius-php
+                    target: sylius_php_prod
+                    platforms: linux/amd64
+                    cache-from: type=gha
+                    cache-to: type=gha
+                    load: true
+    
+            -   name: Build NGiNX Image
+                uses: docker/build-push-action@v3
+                with:
+                    push: false
+                    context: chart/app
+                    tags: sylius-nginx
+                    target: sylius_nginx
+                    platforms: linux/amd64
+                    cache-from: type=gha
+                    cache-to: type=gha
+                    load: true
+            # END BUILDING APP
+    
+            -   name: Run Apply Kubernetes Config
+                run: helm install sylius helm/ --values helm/values.yaml --debug

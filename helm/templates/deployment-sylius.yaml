@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "sylius.fullname" . }}-app
+  namespace: {{ .Values.global.namespace }}
+  labels:
+    {{- include "sylius.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "sylius.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "sylius.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "sylius.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}-app
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository_app }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          envFrom:
+            - secretRef:
+                name: {{ include "sylius.fullname" . }}-envs
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          volumeMounts:
+          - mountPath: /public/media
+            name: {{ include "sylius.fullname" . }}-media
+          - mountPath: /var/sessions
+            name: {{ include "sylius.fullname" . }}-sessions
+          resources:
+            {{- toYaml .Values.resources.app | nindent 12 }}
+      initContainers:
+        - name: "{{ .Chart.Name }}-init"
+          image: "groundnuty/k8s-wait-for:1.3"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args:
+            - "job"
+            - "{{ .Release.Name }}-test-app-cli-{{ .Release.Revision}}"
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+      - name: {{ include "sylius.fullname" . }}-media
+        persistentVolumeClaim:
+          claimName: {{ include "sylius.fullname" . }}-media
+      - name: {{ include "sylius.fullname" . }}-sessions
+        persistentVolumeClaim:
+          claimName: {{ include "sylius.fullname" . }}-sessions
