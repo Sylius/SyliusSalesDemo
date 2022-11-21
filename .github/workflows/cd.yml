@@ -35,7 +35,7 @@ jobs:
                 run: |
                     doctl compute droplet create ${{ env.SERVER_NAME }}-$GITHUB_SHA \
                         --ssh-keys ${{ secrets.DIGITALOCEAN_ADMIN_SSH_KEY }} \
-                        --size s-1vcpu-2gb-intel \
+                        --size s-1vcpu-1gb-intel \
                         --image ubuntu-22-04-x64 \
                         --region ams3 \
                         --tag-name sylius-sales-demo \
