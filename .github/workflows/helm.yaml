@@ -33,10 +33,10 @@ jobs:
             -   name: Install Helm Dependencies
                 run: |
                     helm repo add bitnami2 https://charts.bitnami.com/bitnami
-                    helm dependency build chart/sylius
+                    helm dependency build helm/
 
             -   name: Validate Helm Chart
-                run: helm lint chart/sylius --values chart/sylius/values.yaml
+                run: helm lint helm/ --values helm/values.yaml
 
             # START BUILDING APP
             -   name: Set Up QEMU
