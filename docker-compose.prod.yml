@@ -11,7 +11,7 @@ services:
       - mysql
     environment:
       DATABASE_URL: mysql://sylius:${MYSQL_PASSWORD}@mysql/sylius_prod
-      MAILER_URL: null://localhost
+      MAILER_DSN: null://localhost
       PHP_DATE_TIMEZONE: ${PHP_DATE_TIMEZONE:-UTC}
       APP_ENV: prod
       APP_DEBUG: 0
@@ -19,6 +19,9 @@ services:
       HOME_HOSTNAME: ${HOME_HOSTNAME:-home.localhost}
       FASHION_HOSTNAME: ${FASHION_HOSTNAME:-fashion.localhost}
       SENTRY_DSN: ${SENTRY_DSN:?SENTRY_DSN is not set or empty}
+      MESSENGER_TRANSPORT_DSN: sync://
+      WKHTMLTOPDF_PATH: /usr/local/bin/wkhtmltopdf
+      WKHTMLTOIMAGE_PATH: /usr/local/bin/wkhtmltoimage
     volumes:
       # use a bind-mounted host directory, as we want to keep the sessions
       - ./sylius/var/sessions:/srv/sylius/var/sessions:rw

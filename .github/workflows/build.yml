@@ -4,6 +4,12 @@ on:
     push:
         branches-ignore:
             - 'dependabot/**'
+            - 'master'
+        paths-ignore:
+            - "*.md"
+    pull_request:
+        paths-ignore:
+            - "*.md"
     workflow_dispatch: ~
 
 defaults:
@@ -28,8 +34,14 @@ jobs:
 
         env:
             APP_ENV: test_cached
+            APP_SECRET: "s$cret"
+            APP_DEBUG: 0
             DATABASE_URL: "mysql://root:root@127.0.0.1/sylius?serverVersion=${{ matrix.mysql }}"
-
+            MESSENGER_TRANSPORT_DSN: "sync://"
+            WKHTMLTOPDF_PATH: /usr/local/bin/wkhtmltopdf
+            WKHTMLTOIMAGE_PATH: /usr/local/bin/wkhtmltoimage
+            MAILER_DSN: "null://localhost"
+        
         steps:
             -
                 uses: actions/checkout@v2
@@ -75,6 +87,11 @@ jobs:
             -
                 name: Run webserver
                 run: symfony server:start --port=8080 --dir=public --daemon
+                
+            -
+                name: Validate composer.json
+                run: composer validate --ansi --strict --no-check-publish
+                continue-on-error: true
 
             -
                 name: Restrict Symfony version
@@ -88,7 +105,7 @@ jobs:
 
             -
                 name: Cache Composer
-                uses: actions/cache@v2
+                uses: actions/cache@v3
                 with:
                     path: ${{ steps.composer-cache.outputs.dir }}
                     key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.json **/composer.lock') }}
@@ -112,7 +129,7 @@ jobs:
 
             -
                 name: Cache Yarn
-                uses: actions/cache@v2
+                uses: actions/cache@v3
                 with:
                     path: ${{ steps.yarn-cache.outputs.dir }}
                     key: ${{ runner.os }}-node-${{ matrix.node }}-yarn-${{ hashFiles('**/package.json **/yarn.lock') }}
@@ -126,7 +143,7 @@ jobs:
             -
                 name: Prepare test application database
                 run: |
-                    APP_DEBUG=1 bin/console doctrine:database:create -vvv
+                    bin/console doctrine:database:create -vvv
                     bin/console doctrine:migrations:migrate -n -vvv
                     bin/console doctrine:schema:update -f -vvv
 
@@ -139,7 +156,7 @@ jobs:
                 name: Prepare test application assets
                 run: |
                     bin/console assets:install public -vvv
-                    GULP_ENV=prod yarn build
+                    GULP_ENV=prod yarn gulp:build
 
             -
                 name: Prepare test application cache
@@ -152,11 +169,6 @@ jobs:
             -
                 name: Load fixtures
                 run: bin/console sylius:fixtures:load plus -n
-
-            -   
-                name: Validate composer.json
-                run: composer validate --ansi --strict --no-check-publish
-                continue-on-error: true
             
             -   
                 name: Run security check

@@ -28,13 +28,14 @@ class Order extends BaseOrder implements OrderInterface, ReturnsOrderInterface, 
 
     /**
      * @var bool
+     *
      * @ORM\Column(type="boolean", name="abandoned_email")
      */
     protected $abandonedEmail = false;
 
     public function getRecurringItems(): Collection
     {
-        return $this->items // @phpstan-ignore-line
+        return $this->items
             ->filter(function (OrderItemInterface $orderItem) { // @phpstan-ignore-line
                 $variant = $orderItem->getVariant();
 
@@ -46,7 +47,7 @@ class Order extends BaseOrder implements OrderInterface, ReturnsOrderInterface, 
 
     public function getNonRecurringItems(): Collection
     {
-        return $this->items // @phpstan-ignore-line
+        return $this->items
             ->filter(function (OrderItemInterface $orderItem) { //@phpstan-ignore-line
                 $variant = $orderItem->getVariant();
 

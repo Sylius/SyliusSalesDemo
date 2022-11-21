@@ -21,6 +21,7 @@ class Product extends BaseProduct implements ProductInterface
 
     /**
      * @var ProductTypeInterface
+     *
      * @ORM\ManyToOne(targetEntity="BitBag\SyliusMolliePlugin\Entity\ProductType")
      * @ORM\JoinColumn(name="product_type_id", fieldName="productType", onDelete="SET NULL")
      */

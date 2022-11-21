@@ -29,7 +29,7 @@ RUN install-php-extensions apcu curl exif gd iconv intl mbstring pdo_mysql opcac
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY docker/php/prod/php.ini        /usr/local/etc/php/php.ini
 COPY docker/php/prod/php-cli.ini    /usr/local/etc/php/php-cli.ini
-COPY sylius/config/preload.php      /srv/sylius/config/preload.php
+#COPY sylius/config/preload.php      /srv/sylius/config/preload.php
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
@@ -41,6 +41,7 @@ WORKDIR /srv/sylius
 
 # build for production
 ENV APP_ENV=prod
+ENV SENTRY_DSN=""
 ARG SYLIUS_PLUS_TOKEN
 
 COPY sylius/composer.json sylius/composer.lock sylius/symfony.lock ./
@@ -50,7 +51,6 @@ RUN set -eux; \
     composer clear-cache
 
 # copy only specifically what we need
-COPY sylius/.env sylius/.env.prod sylius/.env.test sylius/.env.test_cached ./
 COPY sylius/bin bin/
 COPY sylius/config config/
 COPY sylius/public public/
@@ -61,8 +61,8 @@ COPY sylius/translations translations/
 RUN set -eux; \
     mkdir -p var/cache var/log; \
     composer dump-autoload --classmap-authoritative; \
-    APP_SECRET='' composer run-script post-install-cmd; \
-    chmod +x bin/console; sync; \
+    chmod +x bin/console; \
+    sync; \
     bin/console sylius:install:assets --no-interaction; \
     bin/console sylius:theme:assets:install public --no-interaction; \
     bin/console ckeditor:install
@@ -102,13 +102,13 @@ COPY --from=sylius_php_prod /srv/sylius/vendor/sylius/sylius/src/Sylius/Bundle/S
 
 COPY sylius/gulpfile.babel.js sylius/.babelrc ./
 RUN set -eux; \
-    GULP_ENV=prod yarn build
+    GULP_ENV=prod yarn gulp:build
 
 COPY docker/node/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
 RUN chmod +x /usr/local/bin/docker-entrypoint
 
 ENTRYPOINT ["docker-entrypoint"]
-CMD ["yarn", "build"]
+CMD ["yarn", "gulp:build"]
 
 FROM nginx:${NGINX_VERSION}-alpine AS sylius_nginx
 

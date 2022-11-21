@@ -12,19 +12,21 @@
     ],
     "homepage": "https://sylius.com",
     "license": "MIT",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "require": {
         "php": "^8.0",
-        "bitbag/cms-plugin": "dev-xml-config",
+        "bitbag/cms-plugin": "^3.2",
         "bitbag/mollie-plugin": "^4.0",
         "bitbag/sylius-adyen-plugin": "^1.1",
-        "bitbag/wishlist-plugin": "dev-fixed-channel",
+        "bitbag/wishlist-plugin": "^2.0",
         "sentry/sentry-symfony": "^4.3",
         "sylius/paypal-plugin": "^1.4",
-        "sylius/plus": "^1.0.0-ALPHA.7",
-        "sylius/sylius": "1.12.x-dev as 1.11.7",
-        "symfony/dotenv": "^5.4",
+        "sylius/plus": "^1.0.0-ALPHA.8",
+        "sylius/sylius": "1.12.0 as 1.11.10",
         "symfony/flex": "^2.1",
-        "symfony/monolog-bundle": "^3.8"
+        "symfony/monolog-bundle": "^3.8",
+        "symfony/runtime": "5.4.*"
     },
     "require-dev": {
         "behat/behat": "^3.7",
@@ -48,24 +50,16 @@
         "phpunit/phpunit": "^8.5",
         "stripe/stripe-php": "^6.43",
         "sylius-labs/coding-standard": "^4.0",
-        "symfony/browser-kit": "^5.4",
-        "symfony/debug-bundle": "^5.4",
-        "symfony/intl": "^5.4",
-        "symfony/web-profiler-bundle": "^5.4",
+        "symfony/browser-kit": "5.4.*",
+        "symfony/debug-bundle": "5.4.*",
+        "symfony/intl": "5.4.*",
+        "symfony/web-profiler-bundle": "5.4.*",
         "polishsymfonycommunity/symfony-mocker-container": "^1.0"
     },
     "repositories": [
         {
             "type": "composer",
             "url": "https://sylius.repo.packagist.com/sylius/"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Ferror/SyliusWishlistPlugin.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Ferror/SyliusCmsPlugin.git"
         }
     ],
     "replace": {
@@ -77,6 +71,7 @@
         "symfony/polyfill-intl-icu": "*",
         "symfony/polyfill-intl-idn": "*",
         "symfony/polyfill-intl-normalizer": "*",
+        "symfony/polyfill-mbstring": "*",
         "symfony/polyfill-php54": "*",
         "symfony/polyfill-php55": "*",
         "symfony/polyfill-php56": "*",
@@ -97,13 +92,14 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
             "symfony/flex": true,
-            "composer/package-versions-deprecated": true
+            "composer/package-versions-deprecated": true,
+            "symfony/runtime": true
         }
     },
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^5.4",
+            "require": "5.4.*",
             "endpoint": [
                 "flex://defaults"
             ]
@@ -121,22 +117,5 @@
         "classmap": [
             "src/Kernel.php"
         ]
-    },
-    "prefer-stable": true,
-    "scripts": {
-        "post-install-cmd": [
-            "@auto-scripts"
-        ],
-        "post-update-cmd": [
-            "@auto-scripts"
-        ],
-        "post-create-project-cmd": [
-            "@php bin/console sylius:inform-about-gus --ansi",
-            "@php bin/console sylius:show-available-plugins --ansi"
-        ],
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
-        }
     }
 }
