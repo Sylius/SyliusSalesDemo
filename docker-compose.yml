@@ -20,11 +20,7 @@ services:
             WKHTMLTOIMAGE_PATH: /usr/local/bin/wkhtmltoimage
         volumes:
             - ./sylius:/srv/sylius:rw,cached
-            # if you develop on Linux, you may use a bind-mounted host directory instead
-            # - ./var:/srv/sylius/var:rw
             - ./sylius/public:/srv/sylius/public:rw,delegated
-            # if you develop on Linux, you may use a bind-mounted host directory instead
-            # - ./public/media:/srv/sylius/public/media:rw
             - public-media:/srv/sylius/public/media:rw
     
     mysql:
@@ -35,10 +31,6 @@ services:
             MYSQL_DATABASE: sylius
             MYSQL_USER: sylius
             MYSQL_PASSWORD: ${MYSQL_PASSWORD:-nopassword}
-        volumes:
-            - mysql-data:/var/lib/mysql:rw
-            # you may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
-            # - ./docker/mysql/data:/var/lib/mysql:rw,delegated
         ports:
             - ${MYSQL_PORT:-3306}:3306
     
@@ -67,11 +59,9 @@ services:
             target: sylius_nginx
         depends_on:
             - php
-            - node # to ensure correct build order
+            - node
         volumes:
             - ./sylius/public:/srv/sylius/public:ro
-            # if you develop on Linux, you may use a bind-mounted host directory instead
-            # - ./public/media:/srv/sylius/public/media:ro
             - public-media:/srv/sylius/public/media:ro,nocopy
         ports:
             - ${HTTP_PORT:-80}:80
@@ -81,11 +71,8 @@ services:
         image: mailhog/mailhog:latest
         environment:
             MH_STORAGE: maildir
-        # volumes:
-        #   - ./docker/mailhog/maildir:/maildir:rw,delegated
         ports:
             - ${MAILHOG_PORT:-8025}:8025
 
 volumes:
-    mysql-data:
     public-media:

@@ -19,6 +19,43 @@ jobs:
                 uses: digitalocean/action-doctl@v2
                 with:
                     token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+                    
+            -
+                name: Set Up QEMU
+                uses: docker/setup-qemu-action@v2
+            -
+                name: Set Up Docker Buildx
+                uses: docker/setup-buildx-action@v2
+            -
+                name: Login to Digital Ocean Container Registry
+                uses: docker/login-action@v2
+                with:
+                    registry: registry.digitalocean.com
+                    username: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+                    password: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+            -
+                name: Build PHP Image
+                uses: docker/build-push-action@v3
+                with:
+                    push: true
+                    tags: registry.digitalocean.com/sylius/sales-demo-php:$GITHUB_SHA
+                    platforms: linux/amd64
+                    cache-from: type=gha
+                    cache-to: type=gha
+                    load: false
+
+            -
+                name: Build NGiNX Image
+                uses: docker/build-push-action@v3
+                with:
+                    push: true
+                    tags: registry.digitalocean.com/sylius/sales-demo-nginx:$GITHUB_SHA
+                    platforms: linux/amd64
+                    cache-from: type=gha
+                    cache-to: type=gha
+                    load: false
+
             -
                 name: Prepare Deployment Script
                 run: |
@@ -28,8 +65,13 @@ jobs:
                     echo "sudo sh get-docker.sh" >> deploy.sh
                     echo "git clone https://github.com/Sylius/SyliusSalesDemo.git" >> deploy.sh
                     echo "cd SyliusSalesDemo || exit" >> deploy.sh
-                    echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} SENTRY_DSN=${{ secrets.SENTRY_DSN }} docker compose -f docker-compose.prod.yml build --build-arg SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }} || exit" >> deploy.sh
-                    echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} SENTRY_DSN=${{ secrets.SENTRY_DSN }} HOME_HOSTNAME=home.sales.sylius.com FASHION_HOSTNAME=fashion.sales.sylius.com docker compose -f docker-compose.prod.yml up -d || exit" >> deploy.sh
+#                    echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} SENTRY_DSN=${{ secrets.SENTRY_DSN }} docker compose -f docker-compose.prod.yml build --build-arg SYLIUS_PLUS_TOKEN=${{ secrets.SYLIUS_PLUS_TOKEN }} || exit" >> deploy.sh
+                    echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} \
+                         SENTRY_DSN=${{ secrets.SENTRY_DSN }} \
+                         HOME_HOSTNAME=home.sales.sylius.com \
+                         FASHION_HOSTNAME=fashion.sales.sylius.com \
+                         IMAGE_VERSION=$GITHUB_SHA \
+                         docker compose -f docker-compose.prod.yml up -d || exit" >> deploy.sh
             -
                 name: Create Droplet
                 run: |
